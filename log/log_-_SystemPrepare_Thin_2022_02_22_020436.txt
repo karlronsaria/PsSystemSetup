@@ -1,0 +1,1536 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20220222020436
+Username: WIN10DEV1\karlr
+RunAs User: WIN10DEV1\karlr
+Configuration Name: 
+Machine: WIN10DEV1 (Microsoft Windows NT 10.0.19044.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+Process ID: 4020
+PSVersion: 5.1.19041.1320
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.1320
+BuildVersion: 10.0.19041.1320
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is log_-_SystemPrepare_Thin_2022_02_22_020436.txt
+C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script>
+PS>.\SystemPrepare_Thin.bat
+WARNING: git command could not be found. Please create an alias or add it to your PATH.
+WARNING: git command could not be found. Please create an alias or add it to your PATH.
+VERBOSE: Device geolocation services: Allow
+VERBOSE: Automatic time synchronization: Allow
+VERBOSE: Automatic time zone update: Allow
+VERBOSE: Remote Desktop connections to this device: Allow
+VERBOSE: Setting Explorer options...
+VERBOSE: Setting Explorer options: Success
+VERBOSE: User Account Control: Deny
+VERBOSE: Perform operation 'Enumerate CimInstances' with following parameters, ''namespaceName' = root\cimv2,'className' =
+Win32_OperatingSystem'.
+VERBOSE: Operation 'Enumerate CimInstances' complete.
+VERBOSE: Network Discovery: Allow
+VERBOSE: File-sharing: Allow
+VERBOSE: Removing Appx packages...
+VERBOSE:
+Removing default packages...
+Remove-AppxPackage : Deployment failed with HRESULT: 0x80073CF3, Package failed updates, dependency or conflict validation.
+Windows cannot remove framework Microsoft.Advertising.Xaml_10.1808.3.0_x64__8wekyb3d8bbwe because package(s)
+microsoft.windowscommunicationsapps currently depends on the framework. Removing all packages that depend on the framework automatically
+removes the framework.
+NOTE: For additional information, look for [ActivityId] aab2d9ce-27ce-0000-583f-b3aace27d801 in the Event Log or use the command line
+Get-AppPackageLog -ActivityID aab2d9ce-27ce-0000-583f-b3aace27d801
+At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:215 char:44
++                 Get-AppxPackage -Name $_ | Remove-AppxPackage
++                                            ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (Microsoft.Adver...__8wekyb3d8bbwe:String) [Remove-AppxPackage], IOException
+    + FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.RemoveAppxPackageCommand
+
+VERBOSE: Operation completed for: Microsoft.Advertising.Xaml_10.1808.3.0_x64__8wekyb3d8bbwe
+VERBOSE: Update PowerShell Help Uri: Allow
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=525624"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/A/6/7/A67D6E91-D891-4399-A862-A8270C38B33F/"
+VERBOSE: Appx: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Appx\en-US\Microsoft.Windows.Appx.PackageManager.Commands.dll-help.xml. Culture en-US
+Version 5.0.6.3
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: CimCmdlets: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\CimCmdlets\en-US\Microsoft.Management.Infrastructure.CimCmdlets.dll-help.xml. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.PowerShell.Management: Updated
+C:\Windows\System32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Management.dll-Help.xml. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Management: Updated
+C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Management.dll-Help.xml. Culture en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.PowerShell.Utility: Updated
+C:\Windows\System32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Utility.dll-help.xml. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Utility: Updated
+C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Utility.dll-help.xml. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Utility: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Utility-help.xml. Culture
+ en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Utility: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Utility-help.xml. Culture
+ en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=285764"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/D/E/E/DEE76FDE-A479-49A4-AA94-AB113AEA91B5/"
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\Microsoft.Windows.Firewall.Commands.dll-help.xml. Culture en-US Version
+4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallAddressFilter.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallApplicationFilter.cmdletDefinition.cdxml-help.xml. Culture
+en-US Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallInterfaceFilter.cmdletDefinition.cdxml-help.xml. Culture en-US
+ Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallInterfaceTypeFilter.cmdletDefinition.cdxml-help.xml. Culture
+en-US Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallPortFilter.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallProfile.cmdletDefinition.cdxml-help.xml. Culture en-US Version
+ 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallRule.cmdletDefinition.cdxml-help.xml. Culture en-US Version
+4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallSecurityFilter.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallServiceFilter.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetFirewallSetting.cmdletDefinition.cdxml-help.xml. Culture en-US Version
+ 4.0.3.0
+VERBOSE: NetSecurity: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetGPO.cmdletDefinition.cdxml-help.xml.
+Culture en-US Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetIPsecDospSetting.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetIPsecMainModeCryptoSet.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetIPsecMainModeRule.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetIPsecMainModeSA.cmdletDefinition.cdxml-help.xml. Culture en-US Version
+ 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetIPsecPhase1AuthSet.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetIPsecPhase2AuthSet.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetIPsecQuickModeCryptoSet.cmdletDefinition.cdxml-help.xml. Culture en-US
+ Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetIPsecQuickModeSA.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetSecurity: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSecurity\en-US\NetIPsecRule.cmdletDefinition.cdxml-help.xml. Culture en-US Version
+4.0.3.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=808399"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/B/C/B/BCBC26E2-EE6D-4336-9A46-245B2BA28CE4/"
+VERBOSE: Microsoft.PowerShell.Operation.Validation: Updated C:\Program
+Files\WindowsPowerShell\Modules\Microsoft.PowerShell.Operation.Validation\1.0.1\en-US\Microsoft.PowerShell.Operation.Validation-help.xml.
+Culture en-US Version 6.0.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: PackageManagement: Updated C:\Program
+Files\WindowsPowerShell\Modules\PackageManagement\1.0.0.1\en-US\Microsoft.PowerShell.PackageManagement.dll-Help.xml. Culture en-US Version
+5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: PowerShellGet: Updated C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\en-US\PSModule-help.xml. Culture en-US
+Version 5.2.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkID=286813"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/1/F/9/1F9A2C13-4099-4BF3-9FD4-A56550883298/"
+VERBOSE: AppBackgroundTask: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\AppBackgroundTask\en-US\microsoft.windows.appbackgroundtask.commands.dll-help.xml. Culture
+en-US Version 4.0.3.0
+VERBOSE: AppBackgroundTask: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\AppBackgroundTask\en-US\PS_BackgroundTask.cdxml-help.xml. Culture en-US Version 4.0.3.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=285540"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/F/4/3/F43E9E25-353B-41A1-BFF8-45B6EDF36D70/"
+VERBOSE: AppLocker: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\AppLocker\en-US\AppLocker.psd1-help.xml. Culture en-US Version
+4.0.2.0
+VERBOSE: AppLocker: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\AppLocker\en-US\Microsoft.Security.ApplicationId.PolicyManagement.Cmdlets.dll-help.xml.
+Culture en-US Version 4.0.2.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=403112"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/A/6/A/A6AB0359-83C3-4B98-BC05-A6B5708E3B1B/"
+VERBOSE: AppvClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\AppvClient\en-US\AppVClientCmdlets.psm1-help.xml. Culture
+en-US Version 5.0.1.0
+VERBOSE: AppvClient: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\AppvClient\en-US\Microsoft.AppV.AppVClientPowerShell.dll-help.xml. Culture en-US Version
+5.0.1.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=311962"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/D/4/1/D4111895-9D8E-46F7-ABD8-610DD8F8918D/"
+VERBOSE: AssignedAccess: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\AssignedAccess\en-US\AssignedAccess-help.xml. Culture
+en-US Version 4.0.1.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390755"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/4/0/D/40DEB3A1-5F2A-4EF9-9577-99CDA4BF479A/"
+VERBOSE: BitLocker: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitLocker\en-US\BitLocker.psm1-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390756"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/B/3/9/B39FBB75-2B17-43F3-ADED-DCA2D064EEC9/"
+VERBOSE: BitsTransfer: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BitsTransfer\en-US\Microsoft.BackgroundIntelligentTransfer.Management.dll-help.xml. Culture
+ en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390757"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/1/6/3/1635DC54-3879-42A6-B5DF-EA95852AD884/"
+VERBOSE: BranchCache: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BranchCache\en-US\BranchCacheClientSettingData.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: BranchCache: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BranchCache\en-US\BranchCacheContentServerSettingData.cdxml-help.xml. Culture en-US Version
+ 5.0.0.0
+VERBOSE: BranchCache: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BranchCache\en-US\BranchCacheHostedCacheServerSettingData.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: BranchCache: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BranchCache\en-US\BranchCacheNetworkSettingData.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: BranchCache: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BranchCache\en-US\BranchCacheOrchestrator.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: BranchCache: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BranchCache\en-US\BranchCachePrimaryPublicationCacheFile.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: BranchCache: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BranchCache\en-US\BranchCachePrimaryRepublicationCacheFile.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: BranchCache: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BranchCache\en-US\BranchCacheSecondaryRepublicationCacheFile.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: BranchCache: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\BranchCache\en-US\BranchCacheStatus.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=626871"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/B/9/8/B9800580-744A-48B8-84E2-204CB65BB257/"
+VERBOSE: ConfigCI: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ConfigCI\en-US\Microsoft.ConfigCI.Commands.dll-help.xml. Culture
+ en-US Version 5.0.2.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390762"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/8/F/F/8FFB50FC-6D78-4945-B977-92FF2BF975C9/"
+VERBOSE: Defender: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Defender\en-US\MSFT_MpComputerStatus.cdxml-help.xml. Culture
+en-US Version 5.0.3.0
+VERBOSE: Defender: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Defender\en-US\MSFT_MpPreference.cdxml-help.xml. Culture en-US
+Version 5.0.3.0
+VERBOSE: Defender: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Defender\en-US\MSFT_MpScan.cdxml-help.xml. Culture en-US Version
+ 5.0.3.0
+VERBOSE: Defender: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Defender\en-US\MSFT_MpSignature.cdxml-help.xml. Culture en-US
+Version 5.0.3.0
+VERBOSE: Defender: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Defender\en-US\MSFT_MpThreat.cdxml-help.xml. Culture en-US
+Version 5.0.3.0
+VERBOSE: Defender: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Defender\en-US\MSFT_MpThreatCatalog.cdxml-help.xml. Culture
+en-US Version 5.0.3.0
+VERBOSE: Defender: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Defender\en-US\MSFT_MpThreatDetection.cdxml-help.xml. Culture
+en-US Version 5.0.3.0
+VERBOSE: Defender: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Defender\en-US\MSFT_MpWDOScan.cdxml-help.xml. Culture en-US
+Version 5.0.3.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?Linkid=285546"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/D/6/4/D641E8C1-B0B0-4FCD-B37F-D901F4F29AC2/"
+VERBOSE: DirectAccessClientComponents: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DirectAccessClientComponents\en-US\MSFT_DAClientExperienceConfiguration.cdxml-help.xml.
+Culture en-US Version 4.0.3.0
+VERBOSE: DirectAccessClientComponents: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DirectAccessClientComponents\en-US\MSFT_DASiteTableEntry.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390767"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/0/4/D/04DFC31F-B910-49CA-B98D-3FCF3F804B77/"
+VERBOSE: Dism: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Dism\en-US\DISM.psm1-help.xml. Culture en-US Version 5.0.1.0
+VERBOSE: Dism: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Dism\en-US\Microsoft.Dism.PowerShell.dll-help.xml. Culture en-US
+Version 5.0.1.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390768"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/4/5/9/4592896F-9387-4D17-A566-5B4425938B57/"
+VERBOSE: DnsClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DnsClient\en-US\dnslookup.dll-help.xml. Culture en-US Version
+5.0.2.0
+VERBOSE: DnsClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DnsClient\en-US\MSFT_DnsClient.cdxml-help.xml. Culture en-US
+Version 5.0.2.0
+VERBOSE: DnsClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DnsClient\en-US\MSFT_DnsClientCache.cdxml-help.xml. Culture
+en-US Version 5.0.2.0
+VERBOSE: DnsClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DnsClient\en-US\MSFT_DnsClientGlobalSetting.cdxml-help.xml.
+Culture en-US Version 5.0.2.0
+VERBOSE: DnsClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DnsClient\en-US\MSFT_DnsClientServerAddress.cdxml-help.xml.
+Culture en-US Version 5.0.2.0
+VERBOSE: DnsClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DnsClient\en-US\PS_DnsClientNRPTGlobal_v1.0.0.cdxml-help.xml.
+Culture en-US Version 5.0.2.0
+VERBOSE: DnsClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DnsClient\en-US\PS_DnsClientNrptPolicy_v1.0.0.cdxml-help.xml.
+Culture en-US Version 5.0.2.0
+VERBOSE: DnsClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\DnsClient\en-US\PS_DnsClientNRPTRule_v1.0.0.cdxml-help.xml.
+Culture en-US Version 5.0.2.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=524348"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/F/4/E/F4E3C28B-ACD2-41D7-B67D-D7BB8AE875A4/"
+VERBOSE: EventTracingManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\EventTracingManagement\en-US\MSFT_AutologgerConfig_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: EventTracingManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\EventTracingManagement\en-US\MSFT_EtwTraceProvider_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: EventTracingManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\EventTracingManagement\en-US\MSFT_EtwTraceSession_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=285548"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/A/F/E/AFEA33CF-9782-4030-8FDD-5D4BEB885409/"
+VERBOSE: International: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\International\en-US\Microsoft.InternationalSettings.Commands.dll-help.xml. Culture en-US
+Version 4.0.2.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390778"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/7/5/F/75F6A394-3C79-44DE-8514-5713E1F2ED9B/"
+VERBOSE: iSCSI: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\iSCSI\en-US\iSCSIConnection.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: iSCSI: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\iSCSI\en-US\iSCSISession.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: iSCSI: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\iSCSI\en-US\iSCSITarget.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: iSCSI: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\iSCSI\en-US\iSCSITargetPortal.cdxml-help.xml. Culture en-US Version
+ 5.0.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: ISE: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ISE\en-US\ISE-help.xml. Culture en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390781"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/1/3/8/138B5672-C241-40C2-9A32-B16AD9148697/"
+VERBOSE: Kds: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Kds\en-US\Microsoft.KeyDistributionService.Cmdlets.dll-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.PowerShell.Archive: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.Archive\en-US\Microsoft.PowerShell.Archive-help.xml. Culture en-US
+Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.PowerShell.Diagnostics: Updated
+C:\Windows\System32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Diagnostics.dll-help.xml. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Diagnostics: Updated
+C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Commands.Diagnostics.dll-help.xml. Culture en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.PowerShell.Host: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.ConsoleHost.dll-help.xml.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Host: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.ConsoleHost.dll-help.xml.
+Culture en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.PowerShell.LocalAccounts: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.LocalAccounts\1.0.0.0\en-US\Microsoft.Powershell.LocalAccounts.dll-Hel
+p.xml. Culture en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.PowerShell.ODataUtils: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Microsoft.PowerShell.ODataUtils\en-US\Microsoft.PowerShell.ODataUtils-help.xml. Culture
+en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.PowerShell.Security: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Certificate_Provider.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Security: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Certificate_Provider.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Security: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Security.dll-help.xml.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Security: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\Microsoft.PowerShell.Security.dll-help.xml.
+Culture en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.WSMan.Management: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_WS-Management_Cmdlets.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.WSMan.Management: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_WS-Management_Cmdlets.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.WSMan.Management: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_WSMan_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.WSMan.Management: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_WSMan_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.WSMan.Management: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\Microsoft.WSMan.Management.dll-Help.xml. Culture
+ en-US Version 5.2.0.0
+VERBOSE: Microsoft.WSMan.Management: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\Microsoft.WSMan.Management.dll-Help.xml. Culture
+ en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkID=285551"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/E/9/0/E90655B8-86C2-48C5-B89F-AB77126C14DB/"
+VERBOSE: MMAgent: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MMAgent\en-US\ps_mmagent_v1.0.cdxml-help.xml. Culture en-US
+Version 4.0.4.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390791"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/6/4/2/6428CEF0-3113-460F-AE7F-5167470E5E2A/"
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\-Language-help.xml. Culture en-US Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\Microsoft.Dtc.PowerShell.dll-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcAdvancedHostSettingTask_v1.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcAdvancedSettingTask_v1.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcClusterDefaultTask_v1.0.cdxml-help.xml. Culture
+ en-US Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcClusterTMMappingTask_v1.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcDefaultTask_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcLogTask_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcNetworkSettingTask_v1.0.cdxml-help.xml. Culture
+ en-US Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcTask_v1.0.cdxml-help.xml. Culture en-US Version
+ 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcTransactionsStatisticsTask_v1.0.cdxml-help.xml.
+ Culture en-US Version 5.0.0.0
+VERBOSE: MsDtc: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcTransactionsTraceSessionTask_v1.0.cdxml-help.xml. Culture en-US Version
+ 5.0.0.0
+VERBOSE: MsDtc: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcTransactionsTraceSettingTask_v1.0.cdxml-help.xml. Culture en-US Version
+ 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\MSFT_DtcTransactionTask_v1.0.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: MsDtc: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\MsDtc\en-US\TestDtc.psm1-help.xml. Culture en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390794"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/D/4/B/D4BFF683-2CDD-4424-925F-16F07A04F44E/"
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapter.cmdletDefinition.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterAdvancedProperty.cmdletDefinition.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterBinding.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterChecksumOffload.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterEncapsulatedPacketTaskOffload.cdxml-help.xml. Culture en-US
+ Version 5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterHardwareInfo.cmdletDefinition.cdxml-help.xml. Culture en-US
+ Version 5.0.0.0
+VERBOSE: NetAdapter: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterIPsecOffload.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: NetAdapter: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterLso.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterPowerManagement.cmdletDefinition.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: NetAdapter: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterQos.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: NetAdapter: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterRdma.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: NetAdapter: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterRsc.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterRss.cmdletDefinition.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: NetAdapter: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterSriov.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterSriovVf.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterStatistics.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterVmq.cmdletDefinition.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterVmqQueue.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: NetAdapter: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetAdapter\en-US\MSFT_NetAdapterVPort.cmdletDefinition.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390795"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/4/B/2/4B2AD26C-F732-44A5-81AF-63AF52420C3F/"
+VERBOSE: NetConnection: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetConnection\en-US\MSFT_NetConnectionProfile.cdxml-help.xml. Culture en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=532774"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/1/5/1/151FB3A9-4033-47B2-B883-32A5EEC82EFF/"
+VERBOSE: NetEventPacketCapture: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\en-US\MSFT_NetEventNetworkAdapter.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: NetEventPacketCapture: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\en-US\MSFT_NetEventPacketCaptureProvider.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: NetEventPacketCapture: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\en-US\MSFT_NetEventProvider.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: NetEventPacketCapture: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\en-US\MSFT_NetEventSession.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: NetEventPacketCapture: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\en-US\MSFT_NetEventVmNetworkAdatper.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: NetEventPacketCapture: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\en-US\MSFT_NetEventVmSwitch.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: NetEventPacketCapture: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetEventPacketCapture\en-US\MSFT_NetEventWFPCaptureProvider.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=285763"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/6/9/F/69F29AAA-FB4B-43F1-AB6F-18F101F5C406/"
+VERBOSE: NetLbfo: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetLbfo\en-US\MSFT_NetLbfoTeam.cdxml-help.xml. Culture en-US
+Version 4.0.4.0
+VERBOSE: NetLbfo: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetLbfo\en-US\MSFT_NetLbfoTeamMember.cdxml-help.xml. Culture
+en-US Version 4.0.4.0
+VERBOSE: NetLbfo: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetLbfo\en-US\MSFT_NetLbfoTeamNic.cdxml-help.xml. Culture en-US
+Version 4.0.4.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=285219"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/1/B/3/1B3FB43A-1E25-447F-BF30-0B646E2693C6/"
+VERBOSE: NetNat: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetNat\en-US\MSFT_NetNat.cdxml-help.xml. Culture en-US Version
+4.0.2.0
+VERBOSE: NetNat: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetNat\en-US\MSFT_NetNatExternalAddress.cdxml-help.xml. Culture
+en-US Version 4.0.2.0
+VERBOSE: NetNat: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetNat\en-US\MSFT_NetNatGlobal.cdxml-help.xml. Culture en-US
+Version 4.0.2.0
+VERBOSE: NetNat: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetNat\en-US\MSFT_NetNatSession.cdxml-help.xml. Culture en-US
+Version 4.0.2.0
+VERBOSE: NetNat: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetNat\en-US\MSFT_NetNatStaticMapping.cdxml-help.xml. Culture
+en-US Version 4.0.2.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=285555"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/6/0/9/60945146-5D48-4807-9C96-B8B07A23C5DB/"
+VERBOSE: NetQos: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetQos\en-US\MSFT_NetQosPolicy.cdxml-help.xml. Culture en-US
+Version 4.0.2.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkID=285556"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/4/8/7/48763B4B-E88E-4D86-AB02-2D461F8F4F6B/"
+VERBOSE: NetSwitchTeam: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSwitchTeam\en-US\MSFT_NetSwitchTeam.cdxml-help.xml.
+Culture en-US Version 4.0.3.0
+VERBOSE: NetSwitchTeam: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetSwitchTeam\en-US\MSFT_NetSwitchTeamMember.cdxml-help.xml. Culture en-US Version 4.0.3.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390802"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/3/A/3/3A38B308-A8EA-4153-9202-402662732D68/"
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetCompartment.cdxml-help.xml. Culture en-US
+ Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetIPAddress.cdxml-help.xml. Culture en-US
+Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetIPInterface.cdxml-help.xml. Culture en-US
+ Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetIPv4Protocol.cdxml-help.xml. Culture
+en-US Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetIPv6Protocol.cdxml-help.xml. Culture
+en-US Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetNeighbor.cdxml-help.xml. Culture en-US
+Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetOffloadGlobalSetting.cdxml-help.xml.
+Culture en-US Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetPrefixPolicy.cdxml-help.xml. Culture
+en-US Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetRoute.cdxml-help.xml. Culture en-US
+Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetTCPConnection.cdxml-help.xml. Culture
+en-US Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetTCPSetting.cdxml-help.xml. Culture en-US
+Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetTransportFilter.cdxml-help.xml. Culture
+en-US Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetUDPEndpoint.cdxml-help.xml. Culture en-US
+ Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetUDPSetting.cdxml-help.xml. Culture en-US
+Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\NetIPConfiguration.psm1-help.xml. Culture en-US
+Version 5.0.4.0
+VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\Test-NetConnection.psm1-help.xml. Culture en-US
+Version 5.0.4.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=285557"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/4/6/3/4632A020-E658-4FCA-BA40-A015C9FCEB67/"
+VERBOSE: NetworkConnectivityStatus: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkConnectivityStatus\en-US\MSFT_DAConnectionStatus.cdxml-help.xml. Culture en-US
+Version 4.0.4.0
+VERBOSE: NetworkConnectivityStatus: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkConnectivityStatus\en-US\MSFT_NCSIPolicyConfiguration.cdxml-help.xml. Culture en-US
+Version 4.0.4.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=216365"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/0/7/4/074A9960-600E-4EFC-A49D-E86F4793FC73/"
+VERBOSE: NetworkSwitchManager: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkSwitchManager\en-US\NetworkSwitchConfiguration.psm1-help.xml. Culture en-US Version
+5.0.1.0
+VERBOSE: NetworkSwitchManager: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkSwitchManager\en-US\NetworkSwitchEthernetPort.psm1-help.xml. Culture en-US Version
+5.0.1.0
+VERBOSE: NetworkSwitchManager: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkSwitchManager\en-US\NetworkSwitchFeature.psm1-help.xml. Culture en-US Version
+5.0.1.0
+VERBOSE: NetworkSwitchManager: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkSwitchManager\en-US\NetworkSwitchGlobalSettingData.psm1-help.xml. Culture en-US
+Version 5.0.1.0
+VERBOSE: NetworkSwitchManager: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkSwitchManager\en-US\NetworkSwitchVlan.psm1-help.xml. Culture en-US Version 5.0.1.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=285559"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/7/F/B/7FB26A90-C7CF-4738-8C05-8C248129447F/"
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_Net6to4Configuration.cdxml-help.xml. Culture en-US Version
+4.0.3.0
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_NetDnsTransitionConfiguration.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_NetDnsTransitionMonitoring.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_NetIpHTTPsConfiguration.cdxml-help.xml. Culture en-US Version
+4.0.3.0
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_NetIpHTTPsState.cdxml-help.xml. Culture en-US Version 4.0.3.0
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_NetISATAPConfiguration.cdxml-help.xml. Culture en-US Version
+4.0.3.0
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_NetNatTransitionConfiguration.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_NetNatTransitionMonitoring.cdxml-help.xml. Culture en-US
+Version 4.0.3.0
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_NetTeredoConfiguration.cdxml-help.xml. Culture en-US Version
+4.0.3.0
+VERBOSE: NetworkTransition: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetworkTransition\en-US\MSFT_NetTeredoState.cdxml-help.xml. Culture en-US Version 4.0.3.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390809"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/2/0/0/200AF58C-1050-432E-B4B7-C225056272C7/"
+VERBOSE: PcsvDevice: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PcsvDevice\en-US\CIM_PhysicalComputerSystemView.cdxml-help.xml. Culture en-US Version
+2.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390811"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/7/C/1/7C19C361-919D-42E7-8917-5DA4DCF6699B/"
+VERBOSE: PKI: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PKI\en-US\Microsoft.CertificateServices.PKIClient.Cmdlets.dll-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkID=524801"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/A/3/9/A390C9B2-489C-4ED8-AC35-86C643E0BEB0/"
+VERBOSE: PnpDevice: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PnpDevice\en-US\PnpDevice.cdxml-help.xml. Culture en-US Version
+ 5.0.1.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390813"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/7/C/B/7CB91087-0665-46E5-B44E-D71DCB2F8BF2/"
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_LocalPrinterPort_v1.0.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_LprPrinterPort_v1.0.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_PrinterConfiguration_v1.0.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_PrinterDriver_v1.0.cdxml-help.xml. Culture en-US Version 5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_PrinterNfcTagTasks_v1.0.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_PrinterNfcTag_v1.0.cdxml-help.xml. Culture en-US Version 5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_PrinterPortTasks_v1.0.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_PrinterPort_v1.0.cdxml-help.xml. Culture en-US Version 5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_PrinterProperty_v1.0.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: PrintManagement: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_Printer_v1.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: PrintManagement: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_PrintJob_v1.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_TcpIpPrinterPort_v1.0.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: PrintManagement: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PrintManagement\en-US\MSFT_WsdPrinterPort_v1.0.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Resolving URI: "https://go.microsoft.com/fwlink/?linkid=845399"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/A/C/2/AC2D4AFB-7CCC-46FD-9B51-23C34E426FE8/"
+VERBOSE: ProcessMitigations: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ProcessMitigations\en-US\ProcessMitigations.dll-Help.xml. Culture en-US Version 5.0.0.1
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=525624"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/A/6/7/A67D6E91-D891-4399-A862-A8270C38B33F/"
+VERBOSE: Provisioning: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Provisioning\en-US\provcmdlets.dll-Help.xml. Culture en-US
+Version 1.0.0.1
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\about_Classes_and_DSC.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\Disable-DscDebug.cdxml-help.xml. Culture en-US Version
+5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\Enable-DscDebug.cdxml-help.xml. Culture en-US Version
+5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\Get-DSCConfiguration.cdxml-help.xml. Culture en-US
+Version 5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\Get-DscConfigurationStatus.cdxml-help.xml. Culture en-US
+Version 5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\Get-DSCLocalConfigurationManager.cdxml-help.xml. Culture
+en-US Version 5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\Microsoft.Windows.DSC.CoreConfProviders.dll-Help.xml.
+Culture en-US Version 5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\PSDesiredStateConfiguration-help.xml. Culture en-US
+Version 5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\Remove-DscConfigurationDocument.cdxml-help.xml. Culture
+en-US Version 5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\Restore-DSCConfiguration.cdxml-help.xml. Culture en-US
+Version 5.2.0.0
+VERBOSE: PSDesiredStateConfiguration: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\en-US\Stop-DscConfiguration.cdxml-help.xml. Culture en-US
+Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: PSScheduledJob: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob\en-US\about_Scheduled_Jobs.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: PSScheduledJob: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob\en-US\about_Scheduled_Jobs_Advanced.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: PSScheduledJob: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob\en-US\about_Scheduled_Jobs_Basics.help.txt.
+ Culture en-US Version 5.2.0.0
+VERBOSE: PSScheduledJob: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob\en-US\about_Scheduled_Jobs_Troubleshooting.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: PSScheduledJob: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSScheduledJob\en-US\Microsoft.PowerShell.ScheduledJob.dll-help.xml. Culture en-US Version
+5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: PSWorkflow: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\about_ActivityCommonParameters.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: PSWorkflow: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\about_Checkpoint-Workflow.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: PSWorkflow: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\about_Foreach-Parallel.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: PSWorkflow: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\about_InlineScript.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: PSWorkflow: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\about_Parallel.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: PSWorkflow: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\about_Sequence.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: PSWorkflow: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\about_Suspend-Workflow.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: PSWorkflow: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\about_WorkflowCommonParameters.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: PSWorkflow: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\about_Workflows.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: PSWorkflow: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflow\en-US\Microsoft.Powershell.Workflow.ServiceCore.dll-help.xml. Culture en-US
+Version 5.2.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: PSWorkflowUtility: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSWorkflowUtility\en-US\Microsoft.PowerShell.Workflow.ServiceCore.dll-help.xml. Culture
+en-US Version 5.2.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390822"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/0/6/6/066656F1-8203-4D31-AC01-BA308085527D/"
+VERBOSE: ScheduledTasks: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ScheduledTasks\en-US\MSFT_ScheduledTask_v1.0.cdxml-help.xml. Culture en-US Version 5.0.2.0
+VERBOSE: ScheduledTasks: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ScheduledTasks\en-US\PSScheduledJob.dll-help.xml. Culture
+en-US Version 5.0.2.0
+VERBOSE: ScheduledTasks: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ScheduledTasks\en-US\PSScheduledJobPrxy.psm1-help.xml.
+Culture en-US Version 5.0.2.0
+VERBOSE: ScheduledTasks: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ScheduledTasks\en-US\PS_ClusteredScheduledTask_v1.0.cdxml-help.xml. Culture en-US Version
+5.0.2.0
+VERBOSE: ScheduledTasks: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\ScheduledTasks\en-US\PS_ScheduledTask_v1.0.cdxml-help.xml.
+ Culture en-US Version 5.0.2.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390823"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/C/A/9/CA9A7C18-3808-4984-A92F-1EF9398F36F9/"
+VERBOSE: SecureBoot: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SecureBoot\en-US\Microsoft.SecureBoot.Commands.dll-help.xml.
+Culture en-US Version 5.0.1.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390827"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/2/4/5/245236CF-D4B7-44A7-854A-BFD7E26E4C5F/"
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbBandwidthLimit.cdxml-help.xml. Culture en-US
+Version 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbClientConfiguration.cdxml-help.xml. Culture
+en-US Version 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbClientNetworkInterface.cdxml-help.xml. Culture
+ en-US Version 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbConnection.cdxml-help.xml. Culture en-US
+Version 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbMapping.cdxml-help.xml. Culture en-US Version
+5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbMultichannelConnection.cdxml-help.xml. Culture
+ en-US Version 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbMultichannelConstraint.cdxml-help.xml. Culture
+ en-US Version 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbOpenFile.cdxml-help.xml. Culture en-US Version
+ 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbScriptModule.psm1-help.xml. Culture en-US
+Version 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbServerConfiguration.cdxml-help.xml. Culture
+en-US Version 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbServerNetworkInterface.cdxml-help.xml. Culture
+ en-US Version 5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbSession.cdxml-help.xml. Culture en-US Version
+5.0.1.0
+VERBOSE: SmbShare: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbShare\en-US\SmbShare.cdxml-help.xml. Culture en-US Version
+5.0.1.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390828"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/3/E/8/3E8BA4AE-B8E4-426D-B622-036A63694E31/"
+VERBOSE: SmbWitness: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\SmbWitness\en-US\SmbWitnessWmiClient.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390831"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/C/7/B/C7BA6961-1F59-4F1E-BF97-3A5244992DCC/"
+VERBOSE: StartLayout: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\StartLayout\en-US\GetStartApps.psm1-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: StartLayout: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\StartLayout\en-US\Microsoft.Windows.StartLayout.Commands.dll-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390832"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/C/2/F/C2FE9526-FC1A-49CF-86EB-7664E1AD4936/"
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\Disk.cdxml-help.xml. Culture en-US Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\DiskImage.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\FileIntegrity.cdxml-help.xml. Culture en-US Version
+ 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\FileServer.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\FileShare.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\FileStorageTier.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\InitiatorId.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\InitiatorPort.cdxml-help.xml. Culture en-US Version
+ 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\MaskingSet.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\OffloadDataTransferSetting.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\Partition.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\PhysicalDisk.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\ResiliencySetting.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageCmdlets.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageEnclosure.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageHealth.cdxml-help.xml. Culture en-US Version
+ 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageJob.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageNode.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StoragePool.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageProvider.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageReliabilityCounter.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageScripts.psm1-help.xml. Culture en-US Version
+ 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageSetting.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageSubSystem.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\StorageTier.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\TargetPort.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\TargetPortal.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\VirtualDisk.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Storage: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Storage\en-US\Volume.cdxml-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390836"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/2/E/3/2E399FBC-59AC-4A55-B996-21F0E1451097/"
+VERBOSE: TLS: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\TLS\en-US\microsoft.windowsauthenticationprotocols.commands.dll-help.xml. Culture en-US
+Version 5.0.1.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkID=285571"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/B/7/A/B7AAAC3B-BB41-4E2A-B833-904EFD831D36/"
+VERBOSE: TroubleshootingPack: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\TroubleshootingPack\en-US\Microsoft.Windows.Diagnosis.TroubleshootingPack.dll-help.xml.
+Culture en-US Version 4.0.3.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390838"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/2/1/2/21223FCC-2B3C-497C-B731-5937AB577919/"
+VERBOSE: TrustedPlatformModule: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\TrustedPlatformModule\en-US\Microsoft.Tpm.Commands.dll-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=826061"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/E/B/1/EB1A5E6C-2DBF-492C-96F4-DF20D7F56D50/"
+VERBOSE: UEV: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\UEV\en-US\Microsoft.Uev.Commands.dll-help.xml. Culture en-US Version
+5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390842"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/1/5/E/15E57BD3-3B46-453B-B475-3820847B55ED/"
+VERBOSE: VpnClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_EapConfiguration_v1.0.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: VpnClient: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_VpnConnectionIPsecConfiguration_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: VpnClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_VpnConnectionProxy_v1.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: VpnClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_VpnConnectionRoute_v1.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: VpnClient: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_VpnConnectionTriggerApplication_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: VpnClient: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_VpnConnectionTriggerDnsConfiguration_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: VpnClient: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_VpnConnectionTriggerTrustedNetwork_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: VpnClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_VpnConnectionTrigger_v1.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: VpnClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_VpnConnection_v1.0.0.cdxml-help.xml. Culture
+ en-US Version 5.0.0.0
+VERBOSE: VpnClient: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\VpnClient\en-US\PS_VpnServerAddress_v1.0.cdxml-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390844"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/4/F/4/4F416EAF-F804-470A-B8F2-67A936D0CA30/"
+VERBOSE: Wdac: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Wdac\en-US\MSFT_OdbcDriverTask_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Wdac: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Wdac\en-US\MSFT_OdbcDsnTask_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Wdac: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Wdac\en-US\MSFT_OdbcPerfCounterTask_v1.0.cdxml-help.xml. Culture
+en-US Version 5.0.0.0
+VERBOSE: Wdac: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Wdac\en-US\MSFT_WdacBidTraceTask_v1.0.cdxml-help.xml. Culture en-US
+Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390848"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/4/1/9/4198B31D-1939-4BD5-BA30-4B7B2B49AE70/"
+VERBOSE: Whea: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\Whea\en-US\Microsoft.Windows.Whea.WheaMemoryPolicy.dll-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=285578"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/2/A/4/2A4DA5A4-A746-44D5-BA78-663F9AD5FD2F/"
+VERBOSE: WindowsDeveloperLicense: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\WindowsDeveloperLicense\en-US\Microsoft.Windows.DeveloperLicense.Commands.dll-help.xml.
+Culture en-US Version 4.0.2.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?linkid=390850"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/7/9/C/79C481D0-18CC-4A5A-88CC-DE9439944145/"
+VERBOSE: WindowsErrorReporting: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\WindowsErrorReporting\en-US\Microsoft.WindowsErrorReporting.PowerShell.dll-help.xml.
+Culture en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=280243"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/A/F/D/AFD0F14E-846E-4BE5-A402-6582748A1CA6/"
+VERBOSE: WindowsSearch: Updated
+C:\Windows\system32\WindowsPowerShell\v1.0\Modules\WindowsSearch\en-US\Microsoft.WindowsSearch.Commands.dll-help.xml. Culture en-US Version
+4.0.2.0
+VERBOSE: Resolving URI: "http://go.microsoft.com/fwlink/?LinkId=614995"
+VERBOSE: Your connection has been redirected to the following URI:
+"https://download.microsoft.com/download/1/C/A/1CAAFFFE-9613-4354-9559-C83ED975FD47/"
+VERBOSE: WindowsUpdate: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\WindowsUpdate\en-US\WindowsUpdateLog.psm1-help.xml. Culture
+ en-US Version 5.0.0.0
+VERBOSE: Resolving URI: "https://aka.ms/powershell51-help"
+VERBOSE: Your connection has been redirected to the following URI: "https://pshelpprod.blob.core.windows.net/cabinets/powershell-5.1/"
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Aliases.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Aliases.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Alias_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Alias_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Arithmetic_Operators.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Arithmetic_Operators.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Arrays.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Arrays.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Assignment_Operators.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Assignment_Operators.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Automatic_Variables.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Automatic_Variables.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Booleans.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Booleans.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Break.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Break.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Built-in_Functions.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Built-in_Functions.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Calculated_Properties.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Calculated_Properties.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Character_Encoding.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Character_Encoding.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_CimSession.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_CimSession.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Classes.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Classes.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Command_Precedence.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Command_Precedence.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Command_Syntax.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Command_Syntax.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Comment_Based_Help.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Comment_Based_Help.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_CommonParameters.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_CommonParameters.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Comparison_Operators.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Comparison_Operators.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Continue.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Continue.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Core_Commands.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Core_Commands.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Data_Sections.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Data_Sections.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Debuggers.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Debuggers.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_DesiredStateConfiguration.help.txt. Culture
+ en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_DesiredStateConfiguration.help.txt. Culture
+ en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Do.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Do.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_DscLogResource.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_DscLogResource.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Enum.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Enum.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Environment_Provider.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Environment_Provider.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Environment_Variables.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Environment_Variables.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Eventlogs.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Eventlogs.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Execution_Policies.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Execution_Policies.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_FileSystem_Provider.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_FileSystem_Provider.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_For.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_For.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Foreach.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Foreach.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Format.ps1xml.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Format.ps1xml.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Functions.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Functions.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Functions_Advanced.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Functions_Advanced.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Functions_Advanced_Methods.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Functions_Advanced_Methods.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Functions_Advanced_Parameters.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Functions_Advanced_Parameters.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Functions_Argument_Completion.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Functions_Argument_Completion.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Functions_CmdletBindingAttribute.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Functions_CmdletBindingAttribute.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Functions_OutputTypeAttribute.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Functions_OutputTypeAttribute.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Function_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Function_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Group_Policy_Settings.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Group_Policy_Settings.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Hash_Tables.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Hash_Tables.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Hidden.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Hidden.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_History.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_History.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_If.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_If.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Intrinsic_Members.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Intrinsic_Members.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Jobs.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Jobs.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Job_Details.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Job_Details.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Join.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Join.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Language_Keywords.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Language_Keywords.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Language_Modes.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Language_Modes.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Line_Editing.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Line_Editing.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Locations.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Locations.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Logging.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Logging.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Logical_Operators.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Logical_Operators.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Methods.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Methods.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Modules.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Modules.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Numeric_Literals.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Numeric_Literals.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Objects.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Objects.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Object_Creation.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Object_Creation.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Operators.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Operators.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Operator_Precedence.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Operator_Precedence.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Output_Streams.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Output_Streams.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_PackageManagement.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_PackageManagement.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Parameters.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Parameters.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Parameters_Default_Values.help.txt. Culture
+ en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Parameters_Default_Values.help.txt. Culture
+ en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Parameter_Sets.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Parameter_Sets.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Parsing.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Parsing.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Path_Syntax.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Path_Syntax.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Pipelines.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Pipelines.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_PowerShell_exe.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_PowerShell_exe.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_PowerShell_Ise_exe.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_PowerShell_Ise_exe.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Preference_Variables.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Preference_Variables.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Profiles.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Profiles.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Prompts.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Prompts.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Properties.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Properties.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Providers.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Providers.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_PSConsoleHostReadLine.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_PSConsoleHostReadLine.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_PSCustomObject.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_PSCustomObject.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_PSModulePath.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_PSModulePath.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_PSSessions.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_PSSessions.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_PSSession_Details.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_PSSession_Details.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_PSSnapins.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_PSSnapins.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Quoting_Rules.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Quoting_Rules.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Redirection.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Redirection.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Ref.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Ref.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Registry_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Registry_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Regular_Expressions.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Regular_Expressions.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Remote.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Remote.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Remote_Disconnected_Sessions.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Remote_Disconnected_Sessions.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Remote_Jobs.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Remote_Jobs.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Remote_Output.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Remote_Output.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Remote_Requirements.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Remote_Requirements.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Remote_Troubleshooting.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Remote_Troubleshooting.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Remote_Variables.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Remote_Variables.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Requires.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Requires.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Reserved_Words.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Reserved_Words.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Return.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Return.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Run_With_PowerShell.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Run_With_PowerShell.help.txt. Culture en-US
+ Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Scopes.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Scopes.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Scripts.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Scripts.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Script_Blocks.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Script_Blocks.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Script_Internationalization.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Script_Internationalization.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Session_Configurations.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Session_Configurations.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Session_Configuration_Files.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Session_Configuration_Files.help.txt.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Signing.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Signing.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Simplified_Syntax.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Simplified_Syntax.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Special_Characters.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Special_Characters.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Splatting.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Splatting.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Split.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Split.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Switch.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Switch.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Tab_Expansion.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Tab_Expansion.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Throw.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Throw.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Transactions.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Transactions.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Trap.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Trap.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Try_Catch_Finally.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Try_Catch_Finally.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Types.ps1xml.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Types.ps1xml.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Type_Accelerators.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Type_Accelerators.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Type_Operators.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Type_Operators.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Updatable_Help.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Updatable_Help.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Using.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Using.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Variables.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Variables.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Variable_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Variable_Provider.help.txt. Culture en-US
+Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_While.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_While.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Wildcards.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Wildcards.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Windows_Powershell_5.1.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Windows_Powershell_5.1.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Windows_PowerShell_ISE.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Windows_PowerShell_ISE.help.txt. Culture
+en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_Windows_RT.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_Windows_RT.help.txt. Culture en-US Version
+5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_WMI.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_WMI.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_WMI_Cmdlets.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_WMI_Cmdlets.help.txt. Culture en-US Version
+ 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\about_WQL.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\about_WQL.help.txt. Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\System32\WindowsPowerShell\v1.0\en-US\System.Management.Automation.dll-help.xml.
+Culture en-US Version 5.2.0.0
+VERBOSE: Microsoft.PowerShell.Core: Updated C:\Windows\SysWOW64\WindowsPowerShell\v1.0\en-US\System.Management.Automation.dll-help.xml.
+Culture en-US Version 5.2.0.0
+WARNING: git command could not be found. Please create an alias or add it to your PATH.
+VERBOSE: Updating Global Assembly Cache...
+
+GAC    Version        Location
+---    -------        --------
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_64\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseSe...
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.CSharp\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.CSharp.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Management.Infrastructure\v4.0_1.0.0.0__31bf3856ad364e35\Microso...
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.PowerShell.Commands.Management\v4.0_3.0.0.0__31bf3856ad364e35\Mi...
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.PowerShell.Commands.Utility\v4.0_3.0.0.0__31bf3856ad364e35\Micro...
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.PowerShell.ConsoleHost\v4.0_3.0.0.0__31bf3856ad364e35\Microsoft....
+False  v4.0.30319     C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\Microsoft.PowerShell.PSReadLine.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.PowerShell.Security\v4.0_3.0.0.0__31bf3856ad364e35\Microsoft.Pow...
+True   v4.0.30319     C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Configuration.Install\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configu...
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_64\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Data.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.DirectorySe...
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Managem...
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Management\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Management.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_64\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\System.Transactions.dll
+True   v4.0.30319     C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll
+
+
+WARNING: Files from a previous installation of Chocolatey were found at 'C:\ProgramData\chocolatey'.
+WARNING: An existing Chocolatey installation was detected. Installation will not continue.
+For security reasons, this script will not overwrite existing installations.
+
+Please use choco upgrade chocolatey to handle upgrades of Chocolatey itself.
+C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script>
+PS>Stop-Transcript
+**********************
+Windows PowerShell transcript end
+End time: 20220222020843
+**********************

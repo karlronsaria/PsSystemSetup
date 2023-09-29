@@ -1,0 +1,75 @@
+{
+    "Clients": [
+        {
+            "Name": "Personal",
+            "Patterns": [
+                  "Microsoft.SkypeApp"
+                , "Microsoft.WindowsFeedback*"
+                , "Microsoft.Windows.FeatureOnDemand.InsiderHub"
+                , "Microsoft.People"
+                , "Microsoft.Bing*"
+                , "Microsoft.Getstarted"
+                , "Microsoft.MicrosoftOfficeHub"
+                , "Microsoft.MicrosoftSolitaireCollection"
+                , "Microsoft.Advertising.Xaml"
+                , "Microsoft.Windows.SecondaryTileExperience"
+                , "Microsoft.OneConnect"
+                , "*Twitter*"
+                , "king.com.CandyCrushSodaSaga"
+                , "flaregamesGmbH.RoyalRevolt2"
+                , "*Netflix"
+                , "Facebook.Facebook"
+                , "Microsoft.MinecraftUWP"
+                , "*MarchofEmpires"
+            ]
+        },
+        {
+            "Name": "Thin",
+            "Patterns" : [
+                  "*bingweather*"
+                , "Microsoft.Windows.ParentalControls"
+                , "Windows.ContactSupport"
+                , "Microsoft.Xbox*"
+                , "microsoft.windowscommunicationsapps"
+                , "Microsoft.Windows.Photos"
+                , "Microsoft.WindowsCamera"
+                , "Microsoft.SkypeApp"
+                , "Microsoft.Zune*"
+                , "Microsoft.WindowsPhone"
+                , "Microsoft.WindowsMaps"
+                , "Microsoft.Office.Desktop"
+                , "Microsoft.Office.OneNote"
+                , "Microsoft.Office.Sway"
+                , "Microsoft.Appconnector"
+                , "Microsoft.WindowsFeedback*"
+                , "Microsoft.Windows.FeatureOnDemand.InsiderHub"
+                , "Microsoft.Windows.Cortana"
+                , "Microsoft.People"
+                , "Microsoft.Bing*  # Money, Sports, News, Finance and Weather"
+                , "Microsoft.Getstarted"
+                , "Microsoft.MicrosoftOfficeHub"
+                , "Microsoft.MicrosoftSolitaireCollection"
+                , "Microsoft.WindowsSoundRecorder"
+                , "Microsoft.3DBuilder"
+                , "Microsoft.Messaging"
+                , "Microsoft.CommsPhone"
+                , "Microsoft.Advertising.Xaml"
+                , "Microsoft.Windows.SecondaryTileExperience"
+                , "Microsoft.Windows.ParentalControls"
+                , "Microsoft.Windows.ContentDeliveryManager"
+                , "Microsoft.Windows.CloudExperienceHost"
+                , "Microsoft.Windows.ShellExperienceHost"
+                , "Microsoft.BioEnrollment"
+                , "Microsoft.OneConnect"
+                , "*Twitter*"
+                , "king.com.CandyCrushSodaSaga"
+                , "flaregamesGmbH.RoyalRevolt2"
+                , "*Netflix"
+                , "Facebook.Facebook"
+                , "Microsoft.MinecraftUWP"
+                , "*MarchofEmpires"
+            ]
+        }
+    ]
+}
+

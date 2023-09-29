@@ -1,0 +1,29 @@
+{
+    "Children": [
+        {
+            "CommandName": "Rename-Computer",
+            "StartMessage": "Renaming computer...",
+            "ArgumentList": {
+                "NewName": "KASLOVT01"
+            }
+        },
+        {
+            "CommandName": "New-SmbShare",
+            "StartMessage": "Adding new file share...",
+            "ArgumentList": {
+                "Name": "C",
+                "Path": "C:/",
+                "ScopeName": "*",
+                "FullAccess": "karlr"
+            }
+        },
+        {
+            "CommandName": "Set-AppxPackage",
+            "ArgumentList": {
+                "Action": "Remove",
+                "Preference": "Personal"
+            }
+        }
+    ]
+}
+
