@@ -12,7 +12,7 @@ function Update-GlobalAssemblyCache {
 
     $items = [AppDomain]::CurrentDomain.GetAssemblies() `
         | Where { -not [String]::IsNullOrWhiteSpace($_.Location) } `
-        | Sort { Split-Path $_.Location -Leaf }
+        | Sort-Object { Split-Path $_.Location -Leaf }
 
     $assembly = "System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
     Write-Verbose "Updating Global Assembly Cache..."
