@@ -72,7 +72,7 @@ function Set-ExplorerPreference {
         $value = $InputObject.$name
         $oldValue = (Get-ItemProperty -Path $path -Name $name).$name
 
-        if ($null -ne (diff ($value) ($oldValue))) {
+        if ($null -ne (Compare-Object ($value) ($oldValue))) {
             Write-Verbose "Setting option $name from $oldValue to $value"
         }
 
@@ -98,7 +98,7 @@ function Set-ExplorerPreference {
         $name = $property.Name
         $value = $InputObject.$name
         $newValue = (Get-ItemProperty -Path $path -Name $name).$name
-        $success = $null -eq (diff ($value) ($newValue))
+        $success = $null -eq (Compare-Object ($value) ($newValue))
 
         if (-not $success) {
             $result.Failures += [PsCustomObject]@{
