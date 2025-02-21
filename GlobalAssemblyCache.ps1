@@ -3,7 +3,7 @@
 <#
     .LINK
         Link: https://www.andrewcbancroft.com/2015/12/16/using-powershell-to-install-a-dll-into-the-gac/
-        Retrieved: 2021_11_23
+        Retrieved: 2021-11-23
 #>
 function Update-GlobalAssemblyCache {
     [Alias('Update-Gac')]

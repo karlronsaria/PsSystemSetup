@@ -1,4 +1,4 @@
-﻿**********************
+**********************
 Windows PowerShell transcript start
 Start time: 20220221124340
 Username: DESKTOP-FOAOQ18\karlr
@@ -16,7 +16,7 @@ WSManStackVersion: 3.0
 PSRemotingProtocolVersion: 2.3
 SerializationVersion: 1.1.0.1
 **********************
-Transcript started, output file is log_-_SystemPrepare_Thin_2022_02_21_124340.txt
+Transcript started, output file is log_-_SystemPrepare_Thin_2022-02-21-124340.txt
 PS C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script> .\SystemPrepare_Thin.bat
 en-US Version 5.0.4.0
 VERBOSE: NetTCPIP: Updated C:\Windows\system32\WindowsPowerShell\v1.0\Modules\NetTCPIP\en-US\MSFT_NetTCPSetting.cdxml-help.xml. Culture en-US

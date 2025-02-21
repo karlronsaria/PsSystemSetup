@@ -1,0 +1,164 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+. : File C:\Users\karlr\OneDrive\Documents\WindowsPowerShell\profile.ps1 cannot be loaded because running scripts is
+disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\karlr\OneDrive\Documents\WindowsPowerShell\profile.ps1'
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+. : File C:\Users\karlr\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because
+running scripts is disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\karlr\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+Loading personal and system profiles took 993ms.
+PS C:\windows\system32> cd C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script
+PS C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script> .\SystemPrepare_Personal.bat
+. : File C:\Users\karlr\OneDrive\Documents\WindowsPowerShell\profile.ps1 cannot be loaded because running scripts is
+disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\karlr\OneDrive\Documents\WindowsPowerShell\profile.ps1'
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+. : File C:\Users\karlr\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 cannot be loaded because
+running scripts is disabled on this system. For more information, see about_Execution_Policies at
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:3
++ . 'C:\Users\karlr\OneDrive\Documents\WindowsPowerShell\Microsoft.Powe ...
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+VERBOSE: Device geolocation services: Allow
+VERBOSE: Automatic time synchronization: Allow
+VERBOSE: Automatic time zone update: Allow
+VERBOSE: Remote Desktop connections to this device: Allow
+Get-NetFirewallRule : No MSFT_NetFirewallRule objects found with property 'DisplayGroup' equal to 'Remote Desktop'.
+Verify the value of the property and retry.
+At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:457 char:5
++     Get-NetFirewallRule -DisplayGroup 'Remote Desktop' `
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Remote Desktop:String) [Get-NetFirewallRule], CimJobException
+    + FullyQualifiedErrorId : CmdletizationQuery_NotFound_DisplayGroup,Get-NetFirewallRule
+
+VERBOSE: Setting Explorer options...
+VERBOSE: Setting option Hidden from 2 to 1
+Get-ItemProperty : Property HideDrivesWithNoMedia does not exist at path
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\.
+At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:73 char:22
++         $oldValue = (Get-ItemProperty -Path $path -Name $name).$name
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (HideDrivesWithNoMedia:String) [Get-ItemProperty], PSArgumentException
+    + FullyQualifiedErrorId : System.Management.Automation.PSArgumentException,Microsoft.PowerShell.Commands.GetItemPr
+   opertyCommand
+
+Compare-Object : Cannot bind argument to parameter 'DifferenceObject' because it is null.
+At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:75 char:38
++         if ($null -ne (diff ($value) ($oldValue))) {
++                                      ~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Compare-Object], ParameterBindingValidationException
+    + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.CompareObje
+   ctCommand
+
+VERBOSE: Setting option HideFileExt from 1 to 0
+Get-ItemProperty : Property ShowCortanaButton does not exist at path
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\.
+At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:73 char:22
++         $oldValue = (Get-ItemProperty -Path $path -Name $name).$name
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (ShowCortanaButton:String) [Get-ItemProperty], PSArgumentException
+    + FullyQualifiedErrorId : System.Management.Automation.PSArgumentException,Microsoft.PowerShell.Commands.GetItemPr
+   opertyCommand
+
+Compare-Object : Cannot bind argument to parameter 'DifferenceObject' because it is null.
+At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:75 char:38
++         if ($null -ne (diff ($value) ($oldValue))) {
++                                      ~~~~~~~~~~~
+    + CategoryInfo          : InvalidData: (:) [Compare-Object], ParameterBindingValidationException                        + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.CompareObje     ctCommand                                                                                                                                                                                                                                    Get-ItemProperty : Property StoreAppsOnTaskbar does not exist at path                                                   HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\.                                         At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:73 char:22                                    +         $oldValue = (Get-ItemProperty -Path $path -Name $name).$name
++                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (StoreAppsOnTaskbar:String) [Get-ItemProperty], PSArgumentException
+    + FullyQualifiedErrorId : System.Management.Automation.PSArgumentException,Microsoft.PowerShell.Commands.GetItemPr
+   opertyCommand
+                                                                                                                        Compare-Object : Cannot bind argument to parameter 'DifferenceObject' because it is null.                               At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:75 char:38                                    +         if ($null -ne (diff ($value) ($oldValue))) {                                                                  +                                      ~~~~~~~~~~~                                                                          + CategoryInfo          : InvalidData: (:) [Compare-Object], ParameterBindingValidationException                        + FullyQualifiedErrorId : ParameterArgumentValidationErrorNullNotAllowed,Microsoft.PowerShell.Commands.CompareObje     ctCommand                                                                                                                                                                                                                                    VERBOSE: Setting Explorer options: Success                                                                              VERBOSE: User Account Control: Deny                                                                                     VERBOSE: Perform operation 'Enumerate CimInstances' with following parameters, ''namespaceName' =                       root\cimv2,'className' = Win32_OperatingSystem'.                                                                        VERBOSE: Operation 'Enumerate CimInstances' complete.                                                                   VERBOSE: Network Discovery: Allow                                                                                       VERBOSE: File-sharing: Allow                                                                                            VERBOSE: Explorer animations: Deny                                                                                                                                                                                                                                                                                                                                      EnableAnimations : False                                                                                                Success          : True                                                                                                 RunspaceId       : 052ed3e8-9fdd-46e8-97cb-6840c78a007a                                                                                                                                                                                         VERBOSE: Windows Feed: Deny                                                                                             VERBOSE: Removing Appx packages...                                                                                      VERBOSE:                                                                                                                Removing default packages...                                                                                            VERBOSE: Operation completed for: Microsoft.BingWeather_4.45.22462.0_x64__8wekyb3d8bbwe                                 Remove-AppxPackage : Deployment failed with HRESULT: 0x80073CFA, Removal failed. Please contact your software vendor.   (Exception from HRESULT: 0x80073CFA)                                                                                    error 0x80070032: AppX Deployment Remove operation on package                                                           Microsoft.Windows.ParentalControls_1000.22000.1.0_neutral_neutral_cw5n1h2txyewy from:                                   C:\Windows\SystemApps\ParentalControls_cw5n1h2txyewy failed. This app is part of Windows and cannot be uninstalled on   a per-user basis. An administrator can attempt to remove the app from the computer using Turn Windows Features on or    off. However, it may not be possible to uninstall the app.                                                              NOTE: For additional information, look for [ActivityId] 29b9631a-4f47-0001-5007-ba29474fd801 in the Event Log or use    the command line Get-AppPackageLog -ActivityID 29b9631a-4f47-0001-5007-ba29474fd801                                     At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:217 char:44                                   +                 Get-AppxPackage -Name $_ | Remove-AppxPackage                                                         +                                            ~~~~~~~~~~~~~~~~~~                                                             + CategoryInfo          : WriteError: (Microsoft.Windo...l_cw5n1h2txyewy:String) [Remove-AppxPackage], IOException      + FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.RemoveAppxPackageCommand                                                                                                                           VERBOSE: Operation completed for: Microsoft.Windows.ParentalControls_1000.22000.1.0_neutral_neutral_cw5n1h2txyewy       Remove-AppxPackage : Deployment failed with HRESULT: 0x80073CFA, Removal failed. Please contact your software vendor.   (Exception from HRESULT: 0x80073CFA)                                                                                    error 0x80070032: AppX Deployment Remove operation on package                                                           Microsoft.XboxGameCallableUI_1000.22000.1.0_neutral_neutral_cw5n1h2txyewy from:                                         C:\Windows\SystemApps\Microsoft.XboxGameCallableUI_cw5n1h2txyewy failed. This app is part of Windows and cannot be      uninstalled on a per-user basis. An administrator can attempt to remove the app from the computer using Turn Windows    Features on or off. However, it may not be possible to uninstall the app.                                               NOTE: For additional information, look for [ActivityId] 29b9631a-4f47-0002-f765-bb29474fd801 in the Event Log or use    the command line Get-AppPackageLog -ActivityID 29b9631a-4f47-0002-f765-bb29474fd801                                     At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:217 char:44                                   +                 Get-AppxPackage -Name $_ | Remove-AppxPackage                                                         +                                            ~~~~~~~~~~~~~~~~~~                                                             + CategoryInfo          : WriteError: (Microsoft.XboxG...l_cw5n1h2txyewy:String) [Remove-AppxPackage], IOException      + FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.RemoveAppxPackageCommand                                                                                                                           VERBOSE: Operation completed for: Microsoft.XboxGameCallableUI_1000.22000.1.0_neutral_neutral_cw5n1h2txyewy             VERBOSE: Operation completed for: Microsoft.Xbox.TCUI_1.23.28002.0_x64__8wekyb3d8bbwe                                   VERBOSE: Operation completed for: Microsoft.XboxGameOverlay_1.46.11001.0_x64__8wekyb3d8bbwe                             VERBOSE: Operation completed for: Microsoft.XboxGamingOverlay_2.50.24002.0_x64__8wekyb3d8bbwe                           VERBOSE: Operation completed for: Microsoft.XboxSpeechToTextOverlay_1.17.29001.0_x64__8wekyb3d8bbwe                     VERBOSE: Operation completed for: Microsoft.XboxIdentityProvider_12.50.6001.0_x64__8wekyb3d8bbwe                        VERBOSE: Operation completed for: microsoft.windowscommunicationsapps_16005.12827.20400.0_x64__8wekyb3d8bbwe            VERBOSE: Operation completed for: Microsoft.Windows.Photos_21.21030.25003.0_x64__8wekyb3d8bbwe                          VERBOSE: Operation completed for: Microsoft.WindowsCamera_2020.503.58.0_x64__8wekyb3d8bbwe                              VERBOSE: Operation completed for: Microsoft.ZuneMusic_10.21012.10511.0_x64__8wekyb3d8bbwe                               VERBOSE: Operation completed for: Microsoft.ZuneVideo_10.21012.10511.0_x64__8wekyb3d8bbwe                               VERBOSE: Operation completed for: Microsoft.WindowsMaps_10.2012.10.0_x64__8wekyb3d8bbwe                                 VERBOSE: Operation completed for: Microsoft.WindowsFeedbackHub_1.2103.1172.0_x64__8wekyb3d8bbwe                         VERBOSE: Operation completed for: Microsoft.People_10.1909.12456.0_x64__8wekyb3d8bbwe                                   VERBOSE: Operation completed for: Microsoft.Getstarted_10.2.41172.0_x64__8wekyb3d8bbwe                                  VERBOSE: Operation completed for: Microsoft.MicrosoftOfficeHub_18.2104.12721.0_x64__8wekyb3d8bbwe                       VERBOSE: Operation completed for: Microsoft.MicrosoftSolitaireCollection_4.6.3102.0_x64__8wekyb3d8bbwe                  VERBOSE: Operation completed for: Microsoft.WindowsSoundRecorder_10.2012.41.0_x64__8wekyb3d8bbwe                        Remove-AppxPackage : Deployment failed with HRESULT: 0x80073CFA, Removal failed. Please contact your software vendor.   (Exception from HRESULT: 0x80073CFA)                                                                                    error 0x80070032: AppX Deployment Remove operation on package                                                           Microsoft.Windows.ParentalControls_1000.22000.1.0_neutral_neutral_cw5n1h2txyewy from:                                   C:\Windows\SystemApps\ParentalControls_cw5n1h2txyewy failed. This app is part of Windows and cannot be uninstalled on   a per-user basis. An administrator can attempt to remove the app from the computer using Turn Windows Features on or    off. However, it may not be possible to uninstall the app.                                                              NOTE: For additional information, look for [ActivityId] 29b9631a-4f47-0000-8a80-bb29474fd801 in the Event Log or use    the command line Get-AppPackageLog -ActivityID 29b9631a-4f47-0000-8a80-bb29474fd801                                     At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:217 char:44                                   +                 Get-AppxPackage -Name $_ | Remove-AppxPackage                                                         +                                            ~~~~~~~~~~~~~~~~~~                                                             + CategoryInfo          : WriteError: (Microsoft.Windo...l_cw5n1h2txyewy:String) [Remove-AppxPackage], IOException      + FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.RemoveAppxPackageCommand                                                                                                                           VERBOSE: Operation completed for: Microsoft.Windows.ParentalControls_1000.22000.1.0_neutral_neutral_cw5n1h2txyewy       Remove-AppxPackage : Deployment failed with HRESULT: 0x80073CFA, Removal failed. Please contact your software vendor.   (Exception from HRESULT: 0x80073CFA)                                                                                    error 0x80070032: AppX Deployment Remove operation on package                                                           Microsoft.Windows.ContentDeliveryManager_10.0.22000.1_neutral_neutral_cw5n1h2txyewy from:                               C:\Windows\SystemApps\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy failed. This app is part of Windows and    cannot be uninstalled on a per-user basis. An administrator can attempt to remove the app from the computer using Turn  Windows Features on or off. However, it may not be possible to uninstall the app.                                       NOTE: For additional information, look for [ActivityId] 29b9631a-4f47-0006-b1e3-b929474fd801 in the Event Log or use    the command line Get-AppPackageLog -ActivityID 29b9631a-4f47-0006-b1e3-b929474fd801                                     At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:217 char:44                                   +                 Get-AppxPackage -Name $_ | Remove-AppxPackage                                                         +                                            ~~~~~~~~~~~~~~~~~~                                                             + CategoryInfo          : WriteError: (Microsoft.Windo...l_cw5n1h2txyewy:String) [Remove-AppxPackage], IOException      + FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.RemoveAppxPackageCommand                                                                                                                           VERBOSE: Operation completed for: Microsoft.Windows.ContentDeliveryManager_10.0.22000.1_neutral_neutral_cw5n1h2txyewy   Remove-AppxPackage : Deployment failed with HRESULT: 0x80073CFA, Removal failed. Please contact your software vendor.   (Exception from HRESULT: 0x80073CFA)                                                                                    error 0x80070032: AppX Deployment Remove operation on package                                                           Microsoft.Windows.CloudExperienceHost_10.0.22000.1_neutral_neutral_cw5n1h2txyewy from:                                  C:\Windows\SystemApps\Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy failed. This app is part of Windows and       cannot be uninstalled on a per-user basis. An administrator can attempt to remove the app from the computer using Turn  Windows Features on or off. However, it may not be possible to uninstall the app.                                       NOTE: For additional information, look for [ActivityId] 29b9631a-4f47-0000-9880-bb29474fd801 in the Event Log or use    the command line Get-AppPackageLog -ActivityID 29b9631a-4f47-0000-9880-bb29474fd801                                     At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:217 char:44                                   +                 Get-AppxPackage -Name $_ | Remove-AppxPackage                                                         +                                            ~~~~~~~~~~~~~~~~~~                                                             + CategoryInfo          : WriteError: (Microsoft.Windo...l_cw5n1h2txyewy:String) [Remove-AppxPackage], IOException      + FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.RemoveAppxPackageCommand                                                                                                                           VERBOSE: Operation completed for: Microsoft.Windows.CloudExperienceHost_10.0.22000.1_neutral_neutral_cw5n1h2txyewy      Remove-AppxPackage : Deployment failed with HRESULT: 0x80073CFA, Removal failed. Please contact your software vendor.   (Exception from HRESULT: 0x80073CFA)                                                                                    error 0x80070032: AppX Deployment Remove operation on package                                                           Microsoft.Windows.ShellExperienceHost_10.0.22000.71_neutral_neutral_cw5n1h2txyewy from:                                 C:\Windows\SystemApps\ShellExperienceHost_cw5n1h2txyewy failed. This app is part of Windows and cannot be uninstalled   on a per-user basis. An administrator can attempt to remove the app from the computer using Turn Windows Features on    or off. However, it may not be possible to uninstall the app.                                                           NOTE: For additional information, look for [ActivityId] 29b9631a-4f47-0007-51d7-b929474fd801 in the Event Log or use    the command line Get-AppPackageLog -ActivityID 29b9631a-4f47-0007-51d7-b929474fd801                                     At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:217 char:44                                   +                 Get-AppxPackage -Name $_ | Remove-AppxPackage                                                         +                                            ~~~~~~~~~~~~~~~~~~                                                             + CategoryInfo          : WriteError: (Microsoft.Windo...l_cw5n1h2txyewy:String) [Remove-AppxPackage], IOException      + FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.RemoveAppxPackageCommand                                                                                                                           VERBOSE: Operation completed for: Microsoft.Windows.ShellExperienceHost_10.0.22000.71_neutral_neutral_cw5n1h2txyewy     Remove-AppxPackage : Deployment failed with HRESULT: 0x80073CFA, Removal failed. Please contact your software vendor.   (Exception from HRESULT: 0x80073CFA)                                                                                    error 0x80070032: AppX Deployment Remove operation on package                                                           Microsoft.BioEnrollment_10.0.19586.1000_neutral__cw5n1h2txyewy from:                                                    C:\Windows\SystemApps\Microsoft.BioEnrollment_cw5n1h2txyewy failed. This app is part of Windows and cannot be           uninstalled on a per-user basis. An administrator can attempt to remove the app from the computer using Turn Windows
+Features on or off. However, it may not be possible to uninstall the app.
+NOTE: For additional information, look for [ActivityId] 29b9631a-4f47-0008-c3ba-ba29474fd801 in the Event Log or use
+the command line Get-AppPackageLog -ActivityID 29b9631a-4f47-0008-c3ba-ba29474fd801
+At C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script\SystemPrepare.ps1:217 char:44
++                 Get-AppxPackage -Name $_ | Remove-AppxPackage
++                                            ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : WriteError: (Microsoft.BioEn...__cw5n1h2txyewy:String) [Remove-AppxPackage], IOException
+    + FullyQualifiedErrorId : DeploymentError,Microsoft.Windows.Appx.PackageManager.Commands.RemoveAppxPackageCommand
+
+VERBOSE: Operation completed for: Microsoft.BioEnrollment_10.0.19586.1000_neutral__cw5n1h2txyewy
+VERBOSE: Update PowerShell Help Uri: Allow
+
+
+Terminate batch job (Y/N)? n
+WARNING: git command could not be found. Please create an alias or add it to your PATH.
+VERBOSE: Updating Global Assembly Cache...
+
+GAC    Version        Location
+---    -------        --------
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_64\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.Management.Infrastructure\v4.0_1.0.0.0__3...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.PowerShell.Commands.Management\v4.0_3.0.0...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.PowerShell.Commands.Utility\v4.0_3.0.0.0_...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.PowerShell.ConsoleHost\v4.0_3.0.0.0__31bf...
+False  v4.0.30319     C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\Microsoft.PowerShell.PSReadLine.dll
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\Microsoft.PowerShell.Security\v4.0_3.0.0.0__31bf385... True   v4.0.30319     C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.dll                                      True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a... True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.Configuration.Install\v4.0_4.0.0.0__b03f5f7f... True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.C... True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_64\System.Data\v4.0_4.0.0.0__b77a5c561934e089\System.Dat... True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.DirectoryServices\v4.0_4.0.0.0__b03f5f7f11d5...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\Syste...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.Management\v4.0_4.0.0.0__b03f5f7f11d50a3a\Sy...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\Syst...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.ServiceProcess\v4.0_4.0.0.0__b03f5f7f11d50a3...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_64\System.Transactions\v4.0_4.0.0.0__b77a5c561934e089\Sy...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089...
+True   v4.0.30319     C:\windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xm...
+
+
+Forcing web requests to allow TLS v1.2 (Required for requests to Chocolatey.org)
+Getting latest version of the Chocolatey package for download.
+Not using proxy.
+Getting Chocolatey from https://community.chocolatey.org/api/v2/package/chocolatey/1.1.0.
+Downloading https://community.chocolatey.org/api/v2/package/chocolatey/1.1.0 to C:\Users\karlr\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip
+Not using proxy.
+Extracting C:\Users\karlr\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip to C:\Users\karlr\AppData\Local\Temp\chocolatey\chocoInstall
+Installing Chocolatey on the local machine
+Creating ChocolateyInstall as an environment variable (targeting 'Machine')
+  Setting ChocolateyInstall to 'C:\ProgramData\chocolatey'
+WARNING: It's very likely you will need to close and reopen your shell
+  before you can use choco.
+Restricting write permissions to Administrators
+We are setting up the Chocolatey package repository.
+The packages themselves go to 'C:\ProgramData\chocolatey\lib'
+  (i.e. C:\ProgramData\chocolatey\lib\yourPackageName).
+A shim file for the command line goes to 'C:\ProgramData\chocolatey\bin'
+  and points to an executable in 'C:\ProgramData\chocolatey\lib\yourPackageName'.
+
+Creating Chocolatey folders if they do not already exist.
+
+WARNING: You can safely ignore errors related to missing log files when
+  upgrading from a version of Chocolatey less than 0.9.9.
+  'Batch file could not be found' is also safe to ignore.
+  'The system cannot find the file specified' - also safe.
+chocolatey.nupkg file not installed in lib.
+ Attempting to locate it from bootstrapper.
+PATH environment variable does not have C:\ProgramData\chocolatey\bin in it. Adding...
+Chocolatey (choco.exe) is now ready.
+You can call choco from anywhere, command line or powershell by typing choco.
+Run choco /? for a list of functions.
+You may need to shut down and restart powershell and/or consoles
+ first prior to using choco.
+Ensuring Chocolatey commands are on the path
+Ensuring chocolatey.nupkg is in the lib folder
+PS C:\Users\karlr\OneDrive\Documents\__KASLOVT01\script>

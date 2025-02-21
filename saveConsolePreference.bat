@@ -6,7 +6,7 @@ set "resourcePath=%path%res\ConsolePreference.reg"
 set "powershell=%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe"
 set "reg=%SystemRoot%\System32\reg.exe"
 set "key=hkcu\console"
-set "command=%powershell% -Command Get-Date -f yyyy_MM_dd_HHmmss"
+set "command=%powershell% -Command Get-Date -f yyyy-MM-dd-HHmmss"
 
 setlocal EnableDelayedExpansion
 

@@ -5,7 +5,7 @@
         Link:
             https://stackoverflow.com/questions/4491999/configure-windows-explorer-folder-options-through-powershell
         Retrieved:
-            2021_11_18
+            2021-11-18
 #>
 function Set-ExplorerPreference {
     [CmdletBinding(DefaultParameterSetName = 'ByString')]
@@ -80,7 +80,7 @@ function Set-ExplorerPreference {
     }
 
     # link: https://stackoverflow.com/questions/4491999/configure-windows-explorer-folder-options-through-powershell
-    # retrieved: 2021_11_18
+    # retrieved: 2021-11-18
     Stop-Process -Name explorer -Force
     Start-Sleep -Seconds 1
 
@@ -233,7 +233,7 @@ function Enable-WindowsHyperVFeature {
     .LINK
         Link: https://superuser.com/questions/1246790/can-i-disable-windows-10-animations-with-a-batch-file
         Link: https://superuser.com/users/380318/ben-n
-        Retrieved: 2022_02_22
+        Retrieved: 2022-02-22
 #>
 function Set-ExplorerAnimationPreference {
     [CmdletBinding(DefaultParameterSetName = "ByInputObject")]
@@ -268,7 +268,7 @@ function Set-ExplorerAnimationPreference {
     # link: https://stackoverflow.com/questions/3369662/can-you-remove-an-add-ed-type-in-powershell-again
     # link: https://stackoverflow.com/users/221631/start-automating
     # link: https://stackoverflow.com/users/645511/katie-kilian
-    # retrieved: 2022_02_22
+    # retrieved: 2022-02-22
 
     $job = Start-Job `
         -ArgumentList $preference `
@@ -307,7 +307,7 @@ function Set-ExplorerAnimationPreference {
         Link:
             https://answers.microsoft.com/en-us/bing/forum/bing_apps-bing_install-bing_appdev_win8/remove-news-feed-from-task-bar/6ec30157-33a8-4908-9363-a25e74bf0677?auth=1
         Retrieved:
-            2022_02_22
+            2022-02-22
 #>
 function Set-WindowsFeedPreference {
     [CmdletBinding(DefaultParameterSetName = "ByInputObject")]
@@ -354,7 +354,7 @@ function Set-WindowsFeedPreference {
         Link:
             http://lifehacker.com/how-to-completely-uninstall-onedrive-in-windows-10-1725363532
         Retrieved:
-            2021_11_25
+            2021-11-25
 #>
 function Uninstall-OneDrive {
     [CmdletBinding()]
@@ -413,7 +413,7 @@ function Start-SystemPrepare {
     )
 
     # link: https://www.top-password.com/blog/enable-or-disable-set-time-zone-automatically-in-windows-10/
-    # retrieved: 2021_11_18
+    # retrieved: 2021-11-18
 
     Write-Verbose "Device geolocation services: $GeoLocation"
     $path = 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location'
@@ -452,7 +452,7 @@ function Start-SystemPrepare {
     }
 
     # link: https://vmarena.com/how-to-enable-remote-desktop-rdp-remotely-using-powershell/
-    # retrieved: 2021_11_18
+    # retrieved: 2021-11-18
 
     Get-NetFirewallRule -DisplayGroup 'Remote Desktop' `
         | Set-NetFirewallRule -Profile 'Any' -Enabled $value
@@ -496,7 +496,7 @@ function Start-SystemPrepare {
     }
 
     # link: https://thegeekpage.com/how-to-enable-and-disable-network-discovery-in-windows-10/
-    # retrieved: 2021_11_18
+    # retrieved: 2021-11-18
     Get-NetFirewallRule -DisplayGroup 'Network Discovery' `
         | Set-NetFirewallRule -Profile $profiles -Enabled $value
 
@@ -508,7 +508,7 @@ function Start-SystemPrepare {
     }
 
     # link: https://www.c-sharpcorner.com/article/how-to-enable-or-disable-file-and-printer-sharing-in-windows-102/
-    # retrieved: 2021_11_18
+    # retrieved: 2021-11-18
     Get-NetFirewallRule -DisplayGroup 'File and Printer Sharing' `
         | Set-NetFirewallRule -Profile $profiles -Enabled $value
 
@@ -539,7 +539,7 @@ function Start-SystemPrepare {
     $value = switch ($UpdateHelp) {
         'Allow' {
             # link: https://answers.microsoft.com/en-us/windows/forum/all/updateing-powershell-user-help-files/07afd880-c543-4e56-9446-1e9eb509003d
-            # retrieved: 2021_11_25
+            # retrieved: 2021-11-25
             Update-Help -Force -ErrorAction SilentlyContinue
         }
     }
@@ -548,7 +548,7 @@ function Start-SystemPrepare {
 <#
     .LINK
         Link: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7.2
-        Retrieved: 2021_11_21
+        Retrieved: 2021-11-21
 #>
 function ConvertTo-Hashtable {
     [CmdletBinding()]

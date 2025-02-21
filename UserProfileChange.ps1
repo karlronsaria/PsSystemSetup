@@ -13,7 +13,7 @@ function Get-WmiProperty {
     )
 
     # link: https://www.xorrior.com/wmic-the-enterprise/
-    # retrieved: 2021_11_16
+    # retrieved: 2021-11-16
 
     $command = if ($Where) {
         "wmic $From where `"$Where`" get $Select"
@@ -101,7 +101,7 @@ function Set-UserProfileName {
         External
     .LINK
         Link: https://superuser.com/questions/1336012/access-to-the-path-is-denied-powershell-rename-item-script
-    Retrieved: 2021_11_16
+    Retrieved: 2021-11-16
 #>
 function Set-SePrivilege {
     Param(
@@ -190,7 +190,7 @@ return retVal;
         External
     .LINK
         Link: https://superuser.com/questions/1336012/access-to-the-path-is-denied-powershell-rename-item-script
-    Retrieved: 2021_11_16
+    Retrieved: 2021-11-16
 #>
 function Invoke-ClaimAdminOwnership {
     Param(

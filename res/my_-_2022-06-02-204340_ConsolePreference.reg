@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_USERS\.DEFAULT\Console]
-"ColorTable00"=dword:00320c32
+[HKEY_CURRENT_USER\console]
+"ColorTable00"=dword:007d004b
 "ColorTable01"=dword:00da3700
 "ColorTable02"=dword:000ea113
 "ColorTable03"=dword:00dd963a
@@ -49,45 +49,46 @@ Windows Registry Editor Version 5.00
 "WindowAlpha"=dword:000000e7
 "WindowSize"=dword:001e0078
 "WordDelimiters"=dword:00000000
-"CurrentPage"=dword:00000001
+"CurrentPage"=dword:00000003
 "CursorType"=dword:00000000
 "InterceptCopyPaste"=dword:00000000
 
-; [HKEY_CURRENT_USER\Console\%%Startup]
-; "DelegationConsole"="{00000000-0000-0000-0000-000000000000}"
-; "DelegationTerminal"="{00000000-0000-0000-0000-000000000000}"
-; 
-; [HKEY_CURRENT_USER\Console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe]
-; "ColorTable05"=dword:00562401
-; "ColorTable06"=dword:00f0edee
-; "FaceName"="Lucida Console"
-; "PopupColors"=dword:000000f3
-; "ScreenBufferSize"=dword:0bb80047
-; "ScreenColors"=dword:00000006
-; "WindowSize"=dword:002d0047
-; "FontSize"=dword:000c0000
-; 
-; [HKEY_CURRENT_USER\Console\%SystemRoot%_SysWOW64_WindowsPowerShell_v1.0_powershell.exe]
-; "ColorTable05"=dword:00562401
-; "ColorTable06"=dword:00f0edee
-; "FaceName"="Lucida Console"
-; "FontFamily"=dword:00000036
-; "FontWeight"=dword:00000190
-; "PopupColors"=dword:000000f3
-; "QuickEdit"=dword:00000001
-; "ScreenBufferSize"=dword:0bb80078
-; "ScreenColors"=dword:00000056
-; "WindowSize"=dword:00320078
-; 
-; [HKEY_CURRENT_USER\Console\Git Bash]
-; "FaceName"="Lucida Console"
-; "FontFamily"=dword:00000036
-; "FontSize"=dword:000e0000
-; "FontWeight"=dword:00000190
-; 
-; [HKEY_CURRENT_USER\Console\Git CMD]
-; "FaceName"="Lucida Console"
-; "FontFamily"=dword:00000036
-; "FontSize"=dword:000e0000
-; "FontWeight"=dword:00000190
+[HKEY_CURRENT_USER\console\%%Startup]
+"DelegationConsole"="{00000000-0000-0000-0000-000000000000}"
+"DelegationTerminal"="{00000000-0000-0000-0000-000000000000}"
+
+[HKEY_CURRENT_USER\console\%SystemRoot%_System32_WindowsPowerShell_v1.0_powershell.exe]
+"ColorTable05"=dword:00562401
+"ColorTable06"=dword:00f0edee
+"FaceName"="Lucida Console"
+"PopupColors"=dword:000000f3
+"ScreenBufferSize"=dword:0bb8004f
+"ScreenColors"=dword:00000006
+"WindowSize"=dword:0028004f
+"ColorTable00"=dword:007d004b
+"FontSize"=dword:00100009
+
+[HKEY_CURRENT_USER\console\%SystemRoot%_SysWOW64_WindowsPowerShell_v1.0_powershell.exe]
+"ColorTable05"=dword:00562401
+"ColorTable06"=dword:00f0edee
+"FaceName"="Lucida Console"
+"FontFamily"=dword:00000036
+"FontWeight"=dword:00000190
+"PopupColors"=dword:000000f3
+"QuickEdit"=dword:00000001
+"ScreenBufferSize"=dword:0bb80078
+"ScreenColors"=dword:00000056
+"WindowSize"=dword:00320078
+
+[HKEY_CURRENT_USER\console\Git Bash]
+"FaceName"="Lucida Console"
+"FontFamily"=dword:00000036
+"FontSize"=dword:000e0000
+"FontWeight"=dword:00000190
+
+[HKEY_CURRENT_USER\console\Git CMD]
+"FaceName"="Lucida Console"
+"FontFamily"=dword:00000036
+"FontSize"=dword:000e0000
+"FontWeight"=dword:00000190
 

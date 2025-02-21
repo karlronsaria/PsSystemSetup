@@ -1,5 +1,5 @@
 :: Link: https://gist.github.com/KristofferRisa/4cfd1ca3fec4e86e550c
-:: Retrieved: 2021_11_15
+:: Retrieved: 2021-11-15
 @echo off
 
 :: TODO:

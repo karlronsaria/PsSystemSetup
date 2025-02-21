@@ -1,4 +1,4 @@
-:: Andrew_D 2021_11_15
+:: Andrew_D 2021-11-15
 
 @echo off
 set packages=
