@@ -3,7 +3,10 @@
         {
             "Name": "Personal",
             "Patterns": [
-                  "Microsoft.SkypeApp"
+                  "*copilot*"
+                , "*startexperience*"
+                , "*webexperience*"
+                , "Microsoft.SkypeApp"
                 , "Microsoft.WindowsFeedback*"
                 , "Microsoft.Windows.FeatureOnDemand.InsiderHub"
                 , "Microsoft.People"
@@ -26,7 +29,10 @@
         {
             "Name": "Thin",
             "Patterns" : [
-                  "*bingweather*"
+                  "*copilot*"
+                , "*startexperience*"
+                , "*webexperience*"
+                , "*bingweather*"
                 , "Microsoft.Windows.ParentalControls"
                 , "Windows.ContactSupport"
                 , "Microsoft.Xbox*"
