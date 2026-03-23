@@ -1,6 +1,7 @@
-. $PsScriptRoot\SystemPrepare.ps1
+. $PsScriptRoot\script\SystemPrepare.ps1
 
-$result = cat $PsScriptRoot\res\myform.json `
+$result = Get-Item $PsScriptRoot\res\myform.json `
+    | Get-Content `
     | ConvertFrom-Json `
     | Get-ObjectForm `
     | ConvertTo-Hashtable

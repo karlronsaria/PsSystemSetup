@@ -1,7 +1,7 @@
 :: Requires RunAsAdministrator
 
 @echo off
-set "path=%~dp0"
+set "path=%~dp0./script/"
 set "machineType=Personal"
 set "logFile=log_-_%~n0"
 

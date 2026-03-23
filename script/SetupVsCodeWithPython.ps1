@@ -1,3 +1,8 @@
+<#
+.DESCRIPTION
+Tags: vscode, python
+#>
+
 function Install-Chocolatey {
     $version = choco --version
 
@@ -6,6 +11,7 @@ function Install-Chocolatey {
     }
 
     Set-ExecutionPolicy Bypass -Scope Process -Force
+
     [System.Net.ServicePointManager]::SecurityProtocol =
         [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
 
@@ -15,7 +21,13 @@ function Install-Chocolatey {
 }
 
 function Install-VsCodePythonPackage {
-    choco install -y python vscode
+    # # (karlr 2026-02-18): Python pushed a release that is not compatible with
+    # # pygame and breaks pygame projects.
+    # choco install -y python vscode
+    choco pin remove -n python
+    choco install -y python --version=3.12.10 --pre --force --allow-downgrade
+    choco pin add -n python
+    choco install -y vscode
 
     $env:Path =
         [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ';' +

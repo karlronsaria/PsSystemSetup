@@ -1,0 +1,13 @@
+{
+    "profile": [
+        {
+            "Name": "Install-VsCodeWithPython",
+            "Items": [
+                "script/SetupVsCodeWithPython.ps1",
+                "setup-vscode-python.bat",
+                "new-python-project.bat"
+            ]
+        }
+    ]
+}
+
