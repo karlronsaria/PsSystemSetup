@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+; link
+; - url: <https://www.top-password.com/blog/enable-or-disable-set-time-zone-automatically-in-windows-10/>
+; - retrieved: 2021-11-18
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters]
+"Type"="NoSync"
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\tzautoupdate]
+"Type"=dword:00000100
+

@@ -15,12 +15,24 @@ function Install-Chocolatey {
     [System.Net.ServicePointManager]::SecurityProtocol =
         [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
 
+    # link
+    # - retrieved: 2026-04-19
     (New-Object System.Net.WebClient).
         DownloadString('https://community.chocolatey.org/install.ps1') |
         Invoke-Expression
 }
 
-function Install-VsCodePythonPackage {
+function Install-ChocoPackage {
+    $package = "$PsScriptRoot/../res/choco-package.json" |
+        Get-ChildItem |
+        Get-Content |
+        ConvertFrom-Json
+        
+    choco pin -y $(package.Pin -join ' ')
+    choco install -y $($package.Install -join ' ')
+}
+
+function Install-ChocoPython {
     # # (karlr 2026-02-18): Python pushed a release that is not compatible with
     # # pygame and breaks pygame projects.
     # choco install -y python vscode
@@ -35,7 +47,10 @@ function Install-VsCodePythonPackage {
 
     python -m pip install --upgrade pip pipx
     pipx install black flake8
+}
 
+function Install-VsCodePythonPackage {
+    Install-ChocoPython
     code --install-extension ms-python.python
     code --install-extension ms-python.vscode-pylance
     code --install-extension ms-python.debugpy

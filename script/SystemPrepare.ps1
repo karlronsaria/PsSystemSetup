@@ -1,6 +1,9 @@
 #Requires -RunAsAdministrator
 
 <#
+.SYNOPSIS
+[RTFM] [TTTM] (karlr 2026-04-25): Please deprecate this and use a registry file instead.
+
     .LINK
         Link:
             https://stackoverflow.com/questions/4491999/configure-windows-explorer-folder-options-through-powershell
@@ -114,6 +117,10 @@ function Set-ExplorerPreference {
     return $result
 }
 
+<#
+.SYNOPSIS
+[RTFM] [TTTM] (karlr 2026-04-25): Please deprecate this and use a registry file instead.
+#>
 function Set-UserAccountControl {
     [CmdletBinding(DefaultParameterSetName = 'On')]
     Param(
@@ -303,6 +310,9 @@ function Set-ExplorerAnimationPreference {
 }
 
 <#
+.SYNOPSIS
+[RTFM] [TTTM] (karlr 2026-04-25): Please deprecate this and use a registry file instead.
+
     .TODO
         Link:
             https://answers.microsoft.com/en-us/bing/forum/bing_apps-bing_install-bing_appdev_win8/remove-news-feed-from-task-bar/6ec30157-33a8-4908-9363-a25e74bf0677?auth=1
@@ -364,6 +374,42 @@ function Uninstall-OneDrive {
     C:\Windows\SysWOW64\OneDriveSetup.exe /uninstall
 }
 
+function Set-FeatureRemoteDesktop {
+    Param(
+        [bool]
+        $Value
+    )
+
+    $deny = if ($Value) { 0 } else { 1 }
+    Write-Verbose "Remote Desktop connections to this device: $RemoteDesktop"
+    $path = 'HKLM:\System\CurrentControlSet\Control\Terminal Server'
+    Set-ItemProperty -Path $path -Name fDenyTSConnections -Value $deny
+
+    # link
+    # - <https://vmarena.com/how-to-enable-remote-desktop-rdp-remotely-using-powershell/>
+    # - retrieved: 2021-11-18
+
+    $value = if ($Value) { 'True' } else { 'False' }
+
+    Get-NetFirewallRule -DisplayGroup 'Remote Desktop' |
+        Set-NetFirewallRule -Profile 'Any' -Enabled $value
+}
+
+function Set-FeatureNetworkDiscovery {
+    Param(
+        [bool]
+        $Value
+    )
+
+    $value = if ($Value) { 'True' } else { 'False' }
+
+    # link
+    # - <https://thegeekpage.com/how-to-enable-and-disable-network-discovery-in-windows-10/>
+    # - retrieved: 2021-11-18
+    Get-NetFirewallRule -DisplayGroup 'Network Discovery' |
+        Set-NetFirewallRule -Profile 'Any' -Enabled $value
+}
+
 function Start-SystemPrepare {
     [CmdletBinding()]
     Param(
@@ -412,6 +458,10 @@ function Start-SystemPrepare {
         $AppxDebloatingPreference = 'Personal'
     )
 
+
+
+    # (karlr 2026-04-25): Please move these to a registry file.
+
     # link: https://www.top-password.com/blog/enable-or-disable-set-time-zone-automatically-in-windows-10/
     # retrieved: 2021-11-18
 
@@ -423,7 +473,6 @@ function Start-SystemPrepare {
         'Allow' { 'NTP' }
         'Deny' { 'NoSync' }
     }
-
     Write-Verbose "Automatic time synchronization: $AutoTimeSync"
     $path = 'HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Parameters'
     Set-ItemProperty -Path $path -Name Type -Value $value
@@ -432,30 +481,13 @@ function Start-SystemPrepare {
         'Allow' { 3 }
         'Deny' { 4 }
     }
-
     Write-Verbose "Automatic time zone update: $AutoSetTimeZone"
     $path = 'HKLM:\SYSTEM\CurrentControlSet\Services\tzautoupdate'
     Set-ItemProperty -Path $path -Name Start -Value $value
 
-    $value = switch ($RemoteDesktop) {
-        'Allow' { 0 }
-        'Deny' { 1 }
-    }
 
-    Write-Verbose "Remote Desktop connections to this device: $RemoteDesktop"
-    $path = 'HKLM:\System\CurrentControlSet\Control\Terminal Server'
-    Set-ItemProperty -Path $path -Name fDenyTSConnections -Value $value
 
-    $value = switch ($RemoteDesktop) {
-        'Allow' { 'True' }
-        'Deny' { 'False' }
-    }
-
-    # link: https://vmarena.com/how-to-enable-remote-desktop-rdp-remotely-using-powershell/
-    # retrieved: 2021-11-18
-
-    Get-NetFirewallRule -DisplayGroup 'Remote Desktop' `
-        | Set-NetFirewallRule -Profile 'Any' -Enabled $value
+    Set-FeatureRemoteDesktop -Value $($RemoteDesktop -eq 'Allow')
 
     Write-Verbose "Setting Explorer options..."
     $result = Set-ExplorerPreference
@@ -488,17 +520,7 @@ function Start-SystemPrepare {
 
     Write-Verbose "Network Discovery: $NetworkDiscovery"
 
-    $profiles = 'Any' # 'Private, Domain'
-
-    $value = switch ($NetworkDiscovery) {
-        'Allow' { 'True' }
-        'Deny' { 'False' }
-    }
-
-    # link: https://thegeekpage.com/how-to-enable-and-disable-network-discovery-in-windows-10/
-    # retrieved: 2021-11-18
-    Get-NetFirewallRule -DisplayGroup 'Network Discovery' `
-        | Set-NetFirewallRule -Profile $profiles -Enabled $value
+    Set-FeatureNetworkDiscovery -Value $($NetworkDiscovery -eq 'Allow')
 
     Write-Verbose "File-sharing: $FileSharing"
 
@@ -507,8 +529,11 @@ function Start-SystemPrepare {
         'Deny' { 'False' }
     }
 
-    # link: https://www.c-sharpcorner.com/article/how-to-enable-or-disable-file-and-printer-sharing-in-windows-102/
-    # retrieved: 2021-11-18
+    $profiles = 'Any' # 'Private, Domain'
+
+    # link
+    # - url: <https://www.c-sharpcorner.com/article/how-to-enable-or-disable-file-and-printer-sharing-in-windows-102/>
+    # - retrieved: 2021-11-18
     Get-NetFirewallRule -DisplayGroup 'File and Printer Sharing' `
         | Set-NetFirewallRule -Profile $profiles -Enabled $value
 
@@ -538,8 +563,9 @@ function Start-SystemPrepare {
 
     $value = switch ($UpdateHelp) {
         'Allow' {
-            # link: https://answers.microsoft.com/en-us/windows/forum/all/updateing-powershell-user-help-files/07afd880-c543-4e56-9446-1e9eb509003d
-            # retrieved: 2021-11-25
+            # link
+            # - <https://answers.microsoft.com/en-us/windows/forum/all/updateing-powershell-user-help-files/07afd880-c543-4e56-9446-1e9eb509003d>
+            # - retrieved: 2021-11-25
             Update-Help -Force -ErrorAction SilentlyContinue
         }
     }
@@ -547,8 +573,8 @@ function Start-SystemPrepare {
 
 <#
     .LINK
-        Link: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7.2
-        Retrieved: 2021-11-21
+    Url: <https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7.2>
+    Retrieved: 2021-11-21
 #>
 function ConvertTo-Hashtable {
     [CmdletBinding()]

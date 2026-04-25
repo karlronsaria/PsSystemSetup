@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00
+
+; link: ideasawakened.com
+; - url: <https://ideasawakened.com/post/microsoft-windows-11-local-account-oobe-bypassnro-fails>
+; - retrieved: 2026-04-24
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\OOBE]
+"SkipMachineOOBE"=dword:00000001
+"BypassNRO"=dword:00000001
+

@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+; link
+; - url: <https://answers.microsoft.com/en-us/bing/forum/bing_apps-bing_install-bing_appdev_win8/remove-news-feed-from-task-bar/6ec30157-33a8-4908-9363-a25e74bf0677>
+; - retrieved: 2022-02-22
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds]
+"EnableFeeds"=dword:00000000
+

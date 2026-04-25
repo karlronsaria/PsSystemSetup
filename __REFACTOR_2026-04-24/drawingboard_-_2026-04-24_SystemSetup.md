@@ -1,0 +1,33 @@
+I need
+- 1 command that imports all registry files
+- 1 command that runs all powershell scripts
+  - 1 command that sets local users
+  - 1 command that installs chocolatey and imports the chocolatey packages list
+    - also enforces specific versions and pins
+  - 1 command that installs vscode plugins
+- 1 command that runs all dos scripts
+
+- move all registry changes to pssystemsetup
+  - search
+    - in
+      - \*.bat, \*.ps1
+    - for
+      - reg add
+        - "(^|\W)reg(\W|$)"
+      - reg.exe
+      - "reg "
+      - ItemProperty
+      - HK
+  - Doing this will break the notebook. Search for all links to these files in the notebook and update them.
+- if a subroutine is strongly linked to the registry change
+  - if not in pssystemsetup
+    - Why is it not in pssystemsetup? No other modules should be changing the registry.
+  - replace with a note
+    - All registry changes have been moved to \<location>
+    - This subroutine requires \<this change>
+    - Please run \<this file or command> to continue
+- move all reverse changes to a subfolder called "reverse"
+- keep a journal of registry changes
+- for each backup write a one-shot command that installs and imports the backup
+- write a dependency tree for all the backups
+

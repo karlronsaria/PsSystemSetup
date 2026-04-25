@@ -39,8 +39,16 @@ function Get-SystemSetupProfile {
             
             $CompletionResults = [System.Collections.Generic.List[System.Management.Automation.CompletionResult]]::new()
             
+            Write-Progress `
+                -Activity "Getting drive letters..." `
+                -PercentComplete 0
+            
             $volumes = Get-Volume |
                 Where-Object DriveType -eq 'Removable'
+
+            Write-Progress `
+                -Activity "Getting drive letters..." `
+                -Completed
                 
             if (-not $volumes) {
                 $CompletionResults.Add('no-removable-devices-found')
@@ -134,9 +142,9 @@ function Get-SystemSetupProfile {
                     -Path $source `
                     -Destination $destination `
                     -Force:$Force
-                    
-                $parent
             }
+
+            $parent
         }
     }
 
@@ -146,12 +154,26 @@ function Get-SystemSetupProfile {
                 "Ejecting drive letter $driveLetter"
                 continue
             }
+            
+            $driveEject = New-Object -ComObject Shell.Application
+            $driveEject.Namespace(17).ParseName("$driveLetter`:\").InvokeVerb("Eject")
 
-            Get-Volume -DriveLetter $driveLetter |
-                ForEach-Object {
-                    $_ | Get-Partition | Get-Disk
-                } |
-                Set-Disk -IsOffline $true
+            # # # issue 2026-03-26-182735
+            # # - actual
+            # #   ```
+            # #   Set-Disk: Not Supported
+            # #   
+            # #   Extended information:
+            # #   Removable media cannot be set to offline.
+            # #   
+            # #   
+            # #   Activity ID: {705b985d-bcd0-0002-51c2-0071d0bcdc01}
+            # #   ```
+            # Get-Volume -DriveLetter $driveLetter |
+            #     ForEach-Object {
+            #         $_ | Get-Partition | Get-Disk
+            #     } |
+            #     Set-Disk -IsOffline $true
         }
     }
 }
