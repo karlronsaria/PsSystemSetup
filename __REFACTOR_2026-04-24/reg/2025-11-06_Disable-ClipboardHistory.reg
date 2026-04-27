@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+; link: Windows 11 is Hiding Your Personal Data in THIS Folder
+; - url: <https://www.youtube.com/watch?v=x8GA1GnEl3o>
+; - retrieved: 2025-11-06
+
+[HKEY_CURRENT_USER\Software\Microsoft\Clipboard]
+"EnableClipboardHistory"=dword:00000000
+

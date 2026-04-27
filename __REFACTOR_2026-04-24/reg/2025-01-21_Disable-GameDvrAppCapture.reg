@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+; (karlr 2025-01-21): Disables the Game DVR app-capture override for the
+; Print Screen key bindings due to unwanted behavior (annoying pop-ups)
+
+[HKEY_CURRENT_USER\System\GameConfigStore]
+"GameDVR_Enabled"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\GameDVR]
+"AppCaptureEnabled"=dword:00000000
+
+; (karlr 2025-11-02)
+[HKEY_CURRENT_USER\System\GameConfigStore]
+"GameDVR_FSEBehaviorMode"=dword:00000010
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\GameDVR]
+"AllowGameDVR"=dword:00000000
+

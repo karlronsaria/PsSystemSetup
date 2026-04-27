@@ -12,8 +12,9 @@ function Get-WmiProperty {
         $Where
     )
 
-    # link: https://www.xorrior.com/wmic-the-enterprise/
-    # retrieved: 2021-11-16
+    # link
+    # - url: <https://www.xorrior.com/wmic-the-enterprise/>
+    # - retrieved: 2021-11-16
 
     $command = if ($Where) {
         "wmic $From where `"$Where`" get $Select"
@@ -22,13 +23,13 @@ function Get-WmiProperty {
     }
 
     Write-Verbose "Query: $command"
-    $result = iex -Command $command
+    $result = Invoke-Expression -Command $command
 
-    $result = $result | ? {
+    $result = $result | Where-Object {
         -not [String]::IsNullOrWhiteSpace($_) -and $_ -notmatch "^\s*$Select\s*$"
     }
 
-    $result = $result | % { $_.Trim() }
+    $result = $result | ForEach-Object { $_.Trim() }
     return $result
 }
 
@@ -97,16 +98,18 @@ function Set-UserProfileName {
 }
 
 <#
-    .DESCRIPTION
-        External
-    .LINK
-        Link: https://superuser.com/questions/1336012/access-to-the-path-is-denied-powershell-rename-item-script
-    Retrieved: 2021-11-16
+.DESCRIPTION
+External
+
+.LINK
+Url: <https://superuser.com/questions/1336012/access-to-the-path-is-denied-powershell-rename-item-script>
+Retrieved: 2021-11-16
 #>
 function Set-SePrivilege {
     Param(
-        ## The privilege to adjust. This set is taken from
-        ## http://msdn.microsoft.com/en-us/library/bb530716(VS.85).aspx
+        # link: The privilege to adjust. This set is taken from
+        # - url: http://msdn.microsoft.com/en-us/library/bb530716(VS.85).aspx
+        # - retrieved: 2026-04-26
         [ValidateSet(
             "SeAssignPrimaryTokenPrivilege", "SeAuditPrivilege", "SeBackupPrivilege",
             "SeChangeNotifyPrivilege", "SeCreateGlobalPrivilege", "SeCreatePagefilePrivilege",
@@ -130,53 +133,46 @@ function Set-SePrivilege {
     $definition = @'
 using System;
 using System.Runtime.InteropServices;
-public class AdjPriv
-{
+public class AdjPriv {
+    [DllImport("advapi32.dll", ExactSpelling = true, SetLastError = true)]
+    internal static extern bool AdjustTokenPrivileges(IntPtr htok, bool disall,
+    ref TokPriv1Luid newst, int len, IntPtr prev, IntPtr relen);
 
-[DllImport("advapi32.dll", ExactSpelling = true, SetLastError = true)]
-internal static extern bool AdjustTokenPrivileges(IntPtr htok, bool disall,
-ref TokPriv1Luid newst, int len, IntPtr prev, IntPtr relen);
+    [DllImport("advapi32.dll", ExactSpelling = true, SetLastError = true)]
+    internal static extern bool OpenProcessToken(IntPtr h, int acc, ref IntPtr phtok);
 
-[DllImport("advapi32.dll", ExactSpelling = true, SetLastError = true)]
-internal static extern bool OpenProcessToken(IntPtr h, int acc, ref IntPtr phtok);
+    [DllImport("advapi32.dll", SetLastError = true)]
+    internal static extern bool LookupPrivilegeValue(string host, string name, ref long pluid);
 
-[DllImport("advapi32.dll", SetLastError = true)]
-internal static extern bool LookupPrivilegeValue(string host, string name, ref long pluid);
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    internal struct TokPriv1Luid {
+        public int Count;
+        public long Luid;
+        public int Attr;
+    }
 
-[StructLayout(LayoutKind.Sequential, Pack = 1)]
-internal struct TokPriv1Luid
-{
-public int Count;
-public long Luid;
-public int Attr;
-}
+    internal const int SE_PRIVILEGE_ENABLED = 0x00000002;
+    internal const int SE_PRIVILEGE_DISABLED = 0x00000000;
+    internal const int TOKEN_QUERY = 0x00000008;
+    internal const int TOKEN_ADJUST_PRIVILEGES = 0x00000020;
 
-internal const int SE_PRIVILEGE_ENABLED = 0x00000002;
-internal const int SE_PRIVILEGE_DISABLED = 0x00000000;
-internal const int TOKEN_QUERY = 0x00000008;
-internal const int TOKEN_ADJUST_PRIVILEGES = 0x00000020;
+    public static bool EnablePrivilege(long processHandle, string privilege, bool disable) {
+        bool retVal;
+        TokPriv1Luid tp;
+        IntPtr hproc = new IntPtr(processHandle);
+        IntPtr htok = IntPtr.Zero;
+        retVal = OpenProcessToken(hproc, TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, ref htok);
+        tp.Count = 1;
+        tp.Luid = 0;
 
-public static bool EnablePrivilege(long processHandle, string privilege, bool disable)
-{
-bool retVal;
-TokPriv1Luid tp;
-IntPtr hproc = new IntPtr(processHandle);
-IntPtr htok = IntPtr.Zero;
-retVal = OpenProcessToken(hproc, TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, ref htok);
-tp.Count = 1;
-tp.Luid = 0;
-if(disable)
-{
-tp.Attr = SE_PRIVILEGE_DISABLED;
-}
-else
-{
-tp.Attr = SE_PRIVILEGE_ENABLED;
-}
-retVal = LookupPrivilegeValue(null, privilege, ref tp.Luid);
-retVal = AdjustTokenPrivileges(htok, false, ref tp, 0, IntPtr.Zero, IntPtr.Zero);
-return retVal;
-}
+        tp.Attr = disable
+            ? SE_PRIVILEGE_DISABLED
+            : SE_PRIVILEGE_ENABLED;
+
+        retVal = LookupPrivilegeValue(null, privilege, ref tp.Luid);
+        retVal = AdjustTokenPrivileges(htok, false, ref tp, 0, IntPtr.Zero, IntPtr.Zero);
+        return retVal;
+    }
 }
 '@
 
@@ -186,11 +182,12 @@ return retVal;
 }
 
 <#
-    .DESCRIPTION
-        External
-    .LINK
-        Link: https://superuser.com/questions/1336012/access-to-the-path-is-denied-powershell-rename-item-script
-    Retrieved: 2021-11-16
+.DESCRIPTION
+External
+
+.LINK
+Url: <https://superuser.com/questions/1336012/access-to-the-path-is-denied-powershell-rename-item-script>
+Retrieved: 2021-11-16
 #>
 function Invoke-ClaimAdminOwnership {
     Param(

@@ -1,5 +1,6 @@
 I need
 - 1 command that imports all registry files
+  - commutative, idempotent
 - 1 command that runs all powershell scripts
   - 1 command that sets local users
   - 1 command that installs chocolatey and imports the chocolatey packages list
@@ -31,3 +32,23 @@ I need
 - for each backup write a one-shot command that installs and imports the backup
 - write a dependency tree for all the backups
 
+- vscode
+  - markdown
+    - I want only the markdown preview package
+    - the markdown preview package should be paired with a key binding that focuses the preview
+- QuietCapture
+  - these items are strongly linked and should be documented as such if they are to be placed in separate modules
+    - pstool/demand/workaround#clear-quietcapture
+    - ???/reg/Disable-QuietScreenCapture
+      - currently in shortcut/dos, bound for pssystemsetup
+    - consider
+      - pssystemsetup/demand and move some of pstool/demand over to it
+- reg
+  - will be in pssystemsetup from now on
+  - will have three categories
+    - root
+    - root/reverse
+    - root/suspend
+  - every file will (and must) have a date
+    - in its internal documentation
+  - keep a pssystemsetup/doc/journal*.md of important registry changes

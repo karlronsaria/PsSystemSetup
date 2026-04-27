@@ -1,0 +1,34 @@
+Windows Registry Editor Version 5.00
+
+; Disable Windows 11 (win11) Recommendations, Advertisements, and Suggested Content
+; - tag: #privacy
+; - link
+;
+;   | retrieved | url |
+;   |-----------|-----|
+;   | 2025-12-03 | <https://learn.microsoft.com/en-us/answers/questions/3234673/disablesearchboxsuggestions-disables-task-bar-sear> |
+;   | 2025-11-08 | <https://www.elevenforum.com/t/disable-ads-in-windows-11.8004> |
+;   |            | <https://superuser.com/questions/1855361/how-do-i-remove-ads-from-the-recommended-section-of-my-start-menu> |
+;   |            | <https://www.pdq.com/blog/how-to-disable-ads-on-windows> |
+;   |            | <https://www.windowscentral.com/software-apps/windows-11/how-to-disable-annoying-ads-on-windows-11> |
+
+; Disable the “Recommended tips, shortcuts, new apps, and more” on Start menu
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"Start_IrisRecommendations"=dword:00000000
+
+; Disable “Get tips and suggestions when you use Windows”
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-338389Enabled"=dword:00000000
+
+; Disable “Show me suggested content in the Settings app”
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-338393Enabled"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-353694Enabled"=dword:00000000
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager]
+"SubscribedContent-353696Enabled"=dword:00000000
+
+; Disable Web searches in Taskbar
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+"DisableSearchBoxSuggestions"=dword:00000001
+

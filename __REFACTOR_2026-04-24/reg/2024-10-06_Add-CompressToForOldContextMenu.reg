@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\CompressToOldMenuEntry]
+"CommandStateSync"=""
+"ExplorerCommandHandler"="{812EE37B-5065-4C14-B0D1-A2266454B0C1}"
+"MUIVerb"="Compress To..."
+"Note"="Copied from original Command Store command: Windows.CompressTo.Wizard"
+
+[HKEY_CLASSES_ROOT\Folder\shell\CompressToOldMenuEntry]
+"CommandStateSync"=""
+"ExplorerCommandHandler"="{812EE37B-5065-4C14-B0D1-A2266454B0C1}"
+"MUIVerb"="Compress To..."
+"Note"="Copied from original Command Store command: Windows.CompressTo.Wizard"

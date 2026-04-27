@@ -27,8 +27,8 @@ function Install-ChocoPackage {
         Get-ChildItem |
         Get-Content |
         ConvertFrom-Json
-        
-    choco pin -y $(package.Pin -join ' ')
+
+    choco pin -y $($package.Pin -join ' ')
     choco install -y $($package.Install -join ' ')
 }
 

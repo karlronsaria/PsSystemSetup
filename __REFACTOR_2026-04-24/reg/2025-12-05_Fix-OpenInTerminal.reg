@@ -1,0 +1,43 @@
+Windows Registry Editor Version 5.00
+
+; (karlr 2025-12-05): 'Open in Terminal' fails to show in context menu for File Explorer, etc,
+; unless I cancel and retry
+; - link to the issue page: /note/issue/issue_-_2025-07-24_Win11.md
+
+
+; ============================
+; Open in Terminal (Directory)
+; ============================
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\OpenInTerminal]
+@="Open in Terminal"
+"Icon"="wt.exe"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\shell\OpenInTerminal\command]
+@="wt.exe -d \"%1\""
+
+
+; ==========================================
+; Open in Terminal (Background of Directory)
+; ==========================================
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\OpenInTerminal]
+@="Open in Terminal"
+"Icon"="%ProgramFiles%\WindowsApps\Microsoft.WindowsTerminal_1.23.12811.0_x64__8wekyb3d8bbwe\wt.exe"
+
+[HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\OpenInTerminal\command]
+@="wt.exe -d \"%V\""
+
+
+; ============================================================
+; Disable the Windows 11 built-in "Open in Terminal" context menu
+; ============================================================
+
+; This blocks the CommandStore verb from appearing in context menus
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{09A288A0-4A3F-4C7B-B075-0B9175C523F5}"=""
+
+; Also block the handler at the per-user level (for some builds)
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{09A288A0-4A3F-4C7B-B075-0B9175C523F5}"=""
+

@@ -1,0 +1,11 @@
+Windows Registry Editor Version 5.00
+
+; 2026-04-24
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\OOBE]
+"BypassNRO"=dword:00000001
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Office]
+
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office]
+

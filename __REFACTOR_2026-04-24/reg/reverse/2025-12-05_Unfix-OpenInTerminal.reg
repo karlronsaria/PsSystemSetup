@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+; (karlr 2025-12-05): 'Open in Terminal' fails to show in context menu for File Explorer, etc,
+; unless I cancel and retry
+; - link to the issue page: /note/issue/issue_-_2025-07-24_Win11.md
+
+[-HKEY_CURRENT_USER\Software\Classes\Directory\shell\OpenInTerminal]
+[-HKEY_CURRENT_USER\Software\Classes\Directory\Background\shell\OpenInTerminal]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{09A288A0-4A3F-4C7B-B075-0B9175C523F5}"=-
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{09A288A0-4A3F-4C7B-B075-0B9175C523F5}"=-
+
