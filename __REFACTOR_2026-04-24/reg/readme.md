@@ -1,3 +1,35 @@
+# howto
+
+## Policy for New Registry (*.reg) Items
+
+- If a registry item was exported from Windows Registry
+  - Scan item closely
+  - If any part of the item
+    - has sensitive information, or
+    - is unreadable
+  - Then
+    - Do not put item here; put in a secure location for registry backups
+  - Else
+    - If item is a reverse of another saved item ``date_Verb-Object.reg``
+      - Save to ``reverse`` as ``date_InverseVerb-Object.reg``
+        - eg 1
+          - item A: ``./2026-01-01_Remove-GameDvr.reg``
+          - item B: ``./reverse/2026-01-01_Add-GameDvr.reg``
+    - Else
+      - Save to ``backup``
+        - With ``date_Verb-Object.reg`` name format
+- If a registry item was researched
+  - Save the item as a file
+    - With a link to the source, in its comments
+    - With ``date_Verb-Object.reg`` name format
+    - If to be applied now
+      - If the file deletes a key
+        - Export the key as a new registry item, and the reverse of ``date_Verb-Object.reg``
+      - Save to the root of this folder
+      - Log the change to a ``journal``, either here or in ``../doc``
+    - Else
+      - Save to ``suspend``
+
 # link
 
 ## ElevenForums Windows Registry
