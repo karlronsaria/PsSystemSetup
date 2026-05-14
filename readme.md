@@ -12,4 +12,5 @@
 ---
 
 [Issues](./doc/issue.md)
+[Style](./doc/style.md)
 

@@ -18,6 +18,5 @@ del ActivitesCache.db-wal
 start explorer.exe
 
 reg add "HKLM\Software\Policies\Microsoft\Windows\System" /v EnableActivityFeed /t REG_DWORD /d 0 /f
-
-echo Please restart the computer.
+echo Please restart the computer
 

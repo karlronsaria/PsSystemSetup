@@ -1,9 +1,9 @@
 <#
 .SYNOPSIS
-Optimize PowerShell startup by reduce JIT compile time with "ngen.exe"
+Optimize PowerShell startup by reducing JIT compile time with "ngen.exe"
 
 .DESCRIPTION
-Optimize PowerShell startup by reduce JIT compile time with "ngen.exe".
+Optimize PowerShell startup by reducing JIT compile time with "ngen.exe".
 
 Script requires administrative permissions.
 
@@ -16,8 +16,9 @@ Script requires administrative permissions.
 ###############################################################################################################
 
 .LINK
-Url: <https://github.com/BornToBeRoot/PowerShell/blob/master/Documentation/Script/OptimizePowerShellStartup.README.md>
-Retrieved: 2025-02-05
+* main repo
+  - Url: <https://github.com/BornToBeRoot/PowerShell/blob/master/Documentation/Script/OptimizePowerShellStartup.README.md>
+  - Retrieved: 2025-02-05
 #>
 
 function Start-OptimizePowerShellStartup {
@@ -55,7 +56,7 @@ function Start-OptimizePowerShellStartup {
 
         # Get assemblies and call ngen.exe
         [System.AppDomain]::CurrentDomain.GetAssemblies() |
-            ForEach-Object { & $ngen_application_path install $_.Location /nologo /verbose}
+            ForEach-Object { & $ngen_application_path install $_.Location /nologo /verbose }
     }
 }
 

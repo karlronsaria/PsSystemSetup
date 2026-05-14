@@ -1,143 +1,7 @@
 #Requires -RunAsAdministrator
 
-. "$PsScriptRoot/Firewall.ps1"
-
-<#
-.LINK
-Url: <https://thomas.vanhoutte.be/miniblog/delete-windows-10-apps/>
-Retrieved: 2026-04-26
-
-.LINK
-Url: <https://github.com/W4RH4WK/Debloat-Windows-10>
-Retrieved: 2026-04-26
-#>
-function Set-AppxPackage {
-    [CmdletBinding()]
-    Param(
-        [Parameter(ValueFromPipeline = $true)]
-        [String[]]
-        $Name,
-
-        [ValidateSet('Add', 'Remove')]
-        [String]
-        $Action,
-
-        [ValidateSet('Personal', 'Thin')]
-        [String]
-        $Preference = 'Personal'
-    )
-
-    Process {
-        $packages = @()
-
-        if ($Name) {
-            $packages = $Name | % {
-                Get-AppxPackage -AllUsers -Name $_ | select Name, PackageFullName
-            }
-        }
-
-        switch ($Action) {
-            'Add' {
-                $packages | % { `
-                    Add-AppxPackage `
-                        -DisableDevelopmentMode `
-                        -Register "$($_.InstallLocation)\AppXManifest.xml"
-                }
-            }
-
-            'Remove' {
-                $packages | Remove-AppxPackage
-            }
-
-            default {
-                Write-Output $packages
-            }
-        }
-    }
-
-    End {
-        if ($Action -eq 'Remove' -and -not $Name) {
-            Write-Verbose "`r`nRemoving default packages...`r`n"
-
-            "$PsScriptRoot/../res/appx.json" |
-                Get-Item |
-                Get-Content |
-                ConvertFrom-Json |
-                ForEach-Object Clients |
-                Where-Object Name -eq $Preference |
-                ForEach-Object Patterns |
-                Where-Object { -not [String]::IsNullOrWhiteSpace($_) } |
-                ForEach-Object { Get-AppxPackage -Name $_ | Remove-AppxPackage }
-        }
-    }
-}
-
-<#
-.LINK
-Url: <https://superuser.com/questions/1246790/can-i-disable-windows-10-animations-with-a-batch-file>
-Retrieved: 2022-02-22
-
-.LINK
-Url: <https://superuser.com/users/380318/ben-n>
-Retrieved: 2022-02-22
-#>
-function Set-ExplorerAnimationPreference {
-    Param(
-        [Bool]
-        $Value
-    )
-
-    # link
-    # - url
-    #   - <https://stackoverflow.com/questions/3369662/can-you-remove-an-add-ed-type-in-powershell-again>
-    #   - <https://stackoverflow.com/users/221631/start-automating>
-    #   - <https://stackoverflow.com/users/645511/katie-kilian>
-    # - retrieved: 2022-02-22
-
-    $job = Start-Job `
-        -ArgumentList $Value `
-        -ScriptBlock {
-            Param([Bool] $Preference)
-
-            Add-Type -TypeDefinition `
-@"
-    using System;
-    using System.Runtime.InteropServices;
-    [StructLayout(LayoutKind.Sequential)] public struct ANIMATIONINFO {
-        public uint cbSize;
-        public bool iMinAnimate;
-    }
-    public class PInvoke { 
-        [DllImport("user32.dll")] public static extern bool SystemParametersInfoW(uint uiAction, uint uiParam, ref ANIMATIONINFO pvParam, uint fWinIni);
-    }
-"@
-
-            $animInfo = New-Object ANIMATIONINFO
-            $animInfo.cbSize = 8
-            $animInfo.iMinAnimate = $Preference
-
-            return [PsCustomObject]@{
-                EnableAnimations = $animInfo.iMinAnimate;
-                Success = [PInvoke]::SystemParametersInfoW(0x49, 0, [ref]$animInfo, 3);
-            }
-        }
-
-    Wait-Job $job | Out-Null
-    return Receive-Job $job
-}
-
-<#
-.LINK
-Url: <http://lifehacker.com/how-to-completely-uninstall-onedrive-in-windows-10-1725363532>
-Retrieved: 2021-11-25
-#>
-function Uninstall-OneDrive {
-    [CmdletBinding()]
-    Param()
-
-    taskkill /f /im OneDrive.exe
-    C:\Windows\SysWOW64\OneDriveSetup.exe /uninstall
-}
+. "$PsScriptRoot/Feature.ps1"
+. "$PsScriptRoot/Clean.ps1"
 
 function Start-SystemPrepare {
     [CmdletBinding()]
@@ -180,7 +44,7 @@ function Start-SystemPrepare {
     Set-FeatureFileAndPrinterSharing -Value $($FileSharing -eq 'Allow')
 
     Write-Verbose "Explorer animations: $ExplorerAnimations"
-    Set-ExplorerAnimationPreference -Value $($ExplorerAnimations -eq 'Allow')
+    Set-ExplorerAnimation -Value $($ExplorerAnimations -eq 'Allow')
 
     Write-Verbose "Removing Appx packages..."
     Set-AppxPackage -Action Remove -Preference $AppxDebloatingPreference
@@ -199,8 +63,9 @@ function Start-SystemPrepare {
 
 <#
 .LINK
-Url: <https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7.2>
-Retrieved: 2021-11-21
+* pscustomobjects cannot be splatted
+  - Url: <https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-pscustomobject?view=powershell-7.2>
+  - Retrieved: 2021-11-21
 #>
 function ConvertTo-Hashtable {
     [CmdletBinding()]
@@ -210,14 +75,14 @@ function ConvertTo-Hashtable {
         $InputObject
     )
 
-    # I really feel like I shouldn't have to do this.
+    # (karlr 2021-11-21): I really feel like I shouldn't have to do this.
 
     Process {
         $table = @{}
 
-        foreach ($property in $InputObject.PsObject.Properties.Name) {
-            $table[$property] = $InputObject.$property
-        }
+        $InputObject.PsObject.Properties |
+            Where-Object { $_.MemberType -eq 'NoteProperty' } |
+            ForEach-Object { $table[$_.Name] = $_.Value }
 
         return $table
     }

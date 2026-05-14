@@ -5,7 +5,7 @@ function Install-PythonPackage {
         [string]
         $UserName,
 
-        $FileStorePath
+        $FileStorePath = "$PsScriptRoot/../res/python"
     )
 
     $command = Get-Command python -ErrorAction SilentlyContinue
@@ -21,7 +21,8 @@ function Install-PythonPackage {
         return "No python packages to install"
     }
 
-    Copy-Item "$path/.idlerc" "C:/Users/$UserName" -Recurse -Force
-    pip install -r "$path/requirements.txt"
+    $fullName = $path.FullName
+    Copy-Item "$fullName/.idlerc" "C:/Users/$UserName" -Recurse -Force
+    pip install -r "$fullName/requirements.txt"
 }
 

@@ -39,6 +39,11 @@ function Set-FeatureFileAndPrinterSharing {
 <#
 .DESCRIPTION
 Tags: remotedesktop rdp terminalservice tsconnect
+
+.LINK
+* howto
+  - Url: <https://vmarena.com/how-to-enable-remote-desktop-rdp-remotely-using-powershell/>
+  - Retrieved: 2021-11-18
 #>
 function Set-FeatureRemoteDesktop {
     Param(
@@ -55,32 +60,8 @@ function Set-FeatureRemoteDesktop {
     $path = 'HKLM:\System\CurrentControlSet\Control\Terminal Server'
     Set-ItemProperty -Path $path -Name fDenyTSConnections -Value $deny
 
-    # link
-    # - url: <https://vmarena.com/how-to-enable-remote-desktop-rdp-remotely-using-powershell/>
-    # - retrieved: 2021-11-18
-
     $Value = if ($Value) { 'True' } else { 'False' }
 
     Get-NetFirewallRule -DisplayGroup 'Remote Desktop' |
         Set-NetFirewallRule -Profile $FirewallProfile -Enabled $Value
 }
-
-function Set-FeatureWindowsHyperV {
-    [CmdletBinding()]
-    Param(
-        [bool]
-        $Value
-    )
-
-    if ($Value) {
-        Get-WindowsOptionalFeature -Online |
-            Where-Object FeatureName -like "*yper-v*" |
-            Enable-WindowsOptionalFeature -Online -All
-    }
-    else {
-        Get-WindowsOptionalFeature -Online |
-            Where-Object FeatureName -like "*yper-v*" |
-            Disable-WindowsOptionalFeature -Online -All
-    }
-}
-
