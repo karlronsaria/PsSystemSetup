@@ -8,7 +8,9 @@ Tags: alert, privacy, debloat, zoicware, copilot, ai, removeai
   - Retrieved: 2026-05-06
 #>
 function Start-WebZoicwareRemoveWindowsAi {
-    & ([scriptblock]::Create((Invoke-RestMethod "https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1"))) -nonInteractive -AllOptions
+    # Running the script with PowerShell 7 is no longer supported and it WILL cause issues.
+    # To avoid this ensure you are running Windows PowerShell (5.1).
+    powershell -Command '& ([scriptblock]::Create((Invoke-RestMethod "https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1"))) -nonInteractive -AllOptions'
 }
 
 <#
