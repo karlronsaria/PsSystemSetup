@@ -28,10 +28,11 @@ Tags: gpedit
   - retrieved: 2025-07-24
 #>
 function Add-WebGroupPolicyEditor {
-    "${env:SystemRoot}/servicing/Packages" |
-    Get-ChildItem `
-        "Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum",
-        "Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum" |
+    "Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum",
+    "Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum" |
+    ForEach-Object {
+        Get-ChildItem "${env:SystemRoot}/servicing/Packages/$_"
+    } |
     ForEach-Object {
         dism /online /norestart /add-package:"$($_.FullName)"
     }

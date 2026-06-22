@@ -1,6 +1,14 @@
 {
     "profile": [
         {
+            "Name": "Fix-EmpLaptopUnit",
+            "Items": [
+                "dos/Remove-Oobe.bat",
+                "reg/*.*"
+            ],
+            "Added": "2026-06-22"
+        },
+        {
             "Name": "Install-VsCodeWithPython",
             "Items": [
                 "script/SetupVsCodeWithPython.ps1",

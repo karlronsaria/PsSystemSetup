@@ -505,11 +505,11 @@ function Install-WebItem {
 
                     switch ($PsCmdlet.ParameterSetName) {
                         'RunNormally' {
-                            & $_.FullName
+                            & $fileItem.FullName
                         }
 
                         'ScriptBlock' {
-                            $_ | ForEach-Object $ScriptBlock
+                            $fileItem | ForEach-Object $ScriptBlock
                         }
                     }
 
@@ -535,16 +535,16 @@ function Get-ReverseDomainName {
     )
 
     $pattern =
-        "^(?<protocol>[^:]+):\/\/(?<application>.*)\.(?<minor>[^\.\/]+)\.(?<major>[^\.\/]+)\/.*\/(?<leaf>[^\/]+)$"
+        "^(?<protocol>[^:]+):\/\/(?<application>.*)\.(?<minor>[^\.\/]+)\.(?<major>[^\.\/]+)\/.*(?<leaf>([^\/]+)?)$"
 
-    $match = [regex]::Match($uri, $pattern)
+    $match = [regex]::Match($Uri, $pattern)
 
     if (-not $match.Success) {
         return ''
     }
 
     $groups = $match.Groups
-    return "$($groups['major'].Value).$($groups['minor'].Value).$($groups['application'].Value)/$($groups['leaf'].Value)"
+    return "$($groups['major']).$($groups['minor']).$($groups['application'])/$($groups['leaf'])"
 }
 
 function Save-WebItem {
@@ -573,7 +573,9 @@ function Save-WebItem {
     "Downloading $leaf using curl."
     "Please wait."
 
-    if ((Get-Command curl -ErrorAction SilentlyContinue)) {
+    # (karlr 2026-06-21): On Windows 10, 'curl' is an alias for
+    # 'Invoke-WebRequest' in PowerShell 5.1.
+    if ((Get-Command "curl.exe" -ErrorAction SilentlyContinue)) {
         curl -L $Uri --output $item
         return $item | ForEach-Object $runOnSave
     }

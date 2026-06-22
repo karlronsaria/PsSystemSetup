@@ -7,29 +7,54 @@
 
 $name = 'CodeNinjas'
 $password = 'cn123456'
+$user = Get-LocalUser -Name $name -ErrorAction SilentlyContinue
 
-New-LocalUser `
-    -Name $name `
-    -FullName $name `
-    -Password $password `
-    -AccountNeverExpires `
-    -PasswordNeverExpires
+if ($null -eq $user) {
+    New-LocalUser `
+        -Name $name `
+        -FullName $name `
+        -Password $password `
+        -AccountNeverExpires `
+        -PasswordNeverExpires
+}
+else {
+    Set-LocalUser `
+        -Name $name `
+        -FullName $name `
+        -Password $password `
+        -AccountNeverExpires `
+        -PasswordNeverExpires
+}
 
 Add-LocalGroupMember `
     -Group 'Users' `
     -Member $name
 
 $name = 'Admin'
+$user = Get-LocalUser -Name $name -ErrorAction SilentlyContinue
 
-New-LocalUser `
-    -Name $name `
-    -FullName $name `
-    -Password (
-        Read-Host -Prompt "Password for $name" -AsSecureString |
-        ConvertFrom-SecureString -AsPlainText `
-    ) `
-    -AccountNeverExpires `
-    -PasswordNeverExpires
+if ($null -eq $user) {
+    New-LocalUser `
+        -Name $name `
+        -FullName $name `
+        -Password (
+            Read-Host -Prompt "Password for $name" -AsSecureString |
+            ConvertFrom-SecureString -AsPlainText `
+        ) `
+        -AccountNeverExpires `
+        -PasswordNeverExpires
+}
+else {
+    Set-LocalUser `
+        -Name $name `
+        -FullName $name `
+        -Password (
+            Read-Host -Prompt "Password for $name" -AsSecureString |
+            ConvertFrom-SecureString -AsPlainText `
+        ) `
+        -AccountNeverExpires `
+        -PasswordNeverExpires
+}
 
 Add-LocalGroupMember `
     -Group 'Administrators' `
@@ -41,13 +66,13 @@ Write-Verbose "Uninstalling OneDrive"
 Uninstall-OneDrive
 
 Write-Verbose "Disabling Network Discovery"
-Set-FeatureNetworkDiscovery -Value $false
+Set-FeatureNetworkDiscovery -Value False
 
 Write-Verbose "Disabling File-sharing"
-Set-FeatureFileAndPrinterSharing -Value $false
+Set-FeatureFileAndPrinterSharing -Value False
 
 Write-Verbose "Disabling Explorer animations"
-Set-ExplorerAnimationPreference -Value $false
+Set-ExplorerAnimationPreference -Value False
 
 Write-Verbose "Removing Appx packages"
 Set-AppxPackage -Action Remove -Preference Thin
@@ -74,4 +99,6 @@ Install-WebItem `
 Find-UninstallCommand `
     -WildCardPattern "*LEGO*Spike*Legacy*" |
     ForEach-Object { $_ | Invoke-Expression }
+
+& "$PsScriptRoot/../res/install/MCreator.2024.3.Windows.64bit.exe"
 
