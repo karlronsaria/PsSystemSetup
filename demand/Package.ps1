@@ -257,7 +257,7 @@ function Install-PowerShell {
         -PercentComplete 100 `
         -Complete
 
-    foreach ($row in $table) {
+    $table | foreach {
         $captures = [Regex]::Matches($_, "\S+")
 
         $name = $captures[0].Value
@@ -293,6 +293,9 @@ function Install-PowerShell {
 
     if ($upgradeAvailable) {
         winget upgrade --id Microsoft.PowerShell --source winget
+    }
+    else {
+        'No upgrade available'
     }
 }
 
