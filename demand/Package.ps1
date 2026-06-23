@@ -257,8 +257,8 @@ function Install-PowerShell {
         -PercentComplete 100 `
         -Complete
 
-    $table | foreach {
-        $captures = [Regex]::Matches($_, "\S+")
+    foreach ($row in $table) {
+        $captures = [Regex]::Matches($row, "\S+")
 
         $name = $captures[0].Value
         $id = $captures[1].Value
