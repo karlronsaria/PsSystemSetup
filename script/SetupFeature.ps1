@@ -1,6 +1,8 @@
 function Set-FeatureNetworkDiscovery {
     Param(
-        [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]
+        # [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]
+        [ValidateSet('True', 'False')]
+        [string]
         $Enabled,
 
         [ValidateSet('Any', 'Domain', 'Private')]
@@ -17,7 +19,9 @@ function Set-FeatureNetworkDiscovery {
 
 function Set-FeatureFileAndPrinterSharing {
     Param(
-        [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]
+        # [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]
+        [ValidateSet('True', 'False')]
+        [string]
         $Enabled,
 
         [ValidateSet('Any', 'Domain', 'Private')]
@@ -43,7 +47,9 @@ Tags: remotedesktop rdp terminalservice tsconnect
 #>
 function Set-FeatureRemoteDesktop {
     Param(
-        [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]
+        # [Microsoft.PowerShell.Cmdletization.GeneratedTypes.NetSecurity.Enabled]
+        [ValidateSet('True', 'False')]
+        [string]
         $Enabled,
 
         [ValidateSet('Any', 'Domain', 'Private')]

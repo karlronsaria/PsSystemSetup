@@ -280,7 +280,14 @@ function Install-PowerShell {
         $id = $captures[1].Value
         $version = $captures[2].Value
         $source = $captures[3].Value
-        $parts = $version.Split('.')
+
+        $parts =
+            if ($version) {
+                $version.Split('.')
+            }
+            else {
+                @('-1', '-1', '-1')
+            }
 
         $upgradeAvailable = $upgradeAvailable -or (
             $id -eq 'Microsoft.PowerShell' -and (
@@ -290,7 +297,7 @@ function Install-PowerShell {
             )
         )
     }
-
+    
     if ($upgradeAvailable) {
         winget upgrade --id Microsoft.PowerShell --source winget
     }
