@@ -1,4 +1,25 @@
+# drawingboard: refactor PsSystemSetup
+
+## 2026-07-07
+
+choco
+
+- java
+  - openjdk
+  - jre8
+  
+profiles
+
+- java
+  - choco install: openjdk jre8
+    - tentative, due to politics of java support
+- mcreator dev environment
+  - requires java profile above
+
+## 2026-04-24
+
 I need
+
 - 1 command that imports all registry files
   - commutative, idempotent
 - 1 command that runs all powershell scripts

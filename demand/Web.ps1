@@ -8,9 +8,30 @@ Tags: alert, privacy, debloat, zoicware, copilot, ai, removeai
   - Retrieved: 2026-05-06
 #>
 function Start-WebZoicwareRemoveWindowsAi {
+    Param(
+        [int]
+        $TimeoutSeconds = 10
+    )
+
+    $protection = Get-MpComputerStatus | ForEach-Object RealTimeProtectionEnabled
+    Set-MpPreference -DisableRealtimeMonitoring $false
+
+    $deadline = [datetime]::UtcNow + ($TimeoutSeconds * 1000)
+
+    do {
+        if (-not (Get-MpComputerStatus | ForEach-Object RealTimeProtectionEnabled)) {
+            break
+        }
+
+        Start-Sleep -Milliseconds 500
+    }
+    while ([datetime]::UtcNow -lt $deadline)
+
     # Running the script with PowerShell 7 is no longer supported and it WILL cause issues.
     # To avoid this ensure you are running Windows PowerShell (5.1).
     powershell -Command '& ([scriptblock]::Create((Invoke-RestMethod "https://raw.githubusercontent.com/zoicware/RemoveWindowsAI/main/RemoveWindowsAi.ps1"))) -nonInteractive -AllOptions'
+
+    Set-MpPreference -DisableRealtimeMonitoring $protection
 }
 
 <#

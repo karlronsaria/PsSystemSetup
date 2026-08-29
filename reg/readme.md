@@ -34,6 +34,26 @@
 
 ## link
 
+### TenForums: How to Turn On or Off Automatic Device Driver Installation in Windows 10
+
+- by: Shawn Brink
+- when: 2023-12-18
+- resource
+  - Disable-AutoinstallDriverSoftware.reg
+  - Enable-AutoinstallDriverSoftware.reg
+- retrieved: 2026-08-07
+
+#### alert: LG monitors caught auto-installing McAfee pop-up ads on Windows devices
+
+##### link
+
+| retrieved | what | url |
+|-----------|------|-----|
+| 2026-08-06 | news source | <https://www.theverge.com/tech/967983/lg-monitors-mcafee-adware-gamers-nexus> |
+| 2026-08-06 | Microsoft reference: Device Metadata Packages | <https://learn.microsoft.com/en-us/windows-hardware/drivers/install/overview-of-device-metadata-packages> |
+| 2026-08-06 | commentary, howto | <https://www.youtube.com/watch?v=I1a-JOGR1MU> |
+| 2026-08-06 | howto | <https://www.tenforums.com/tutorials/15989-turn-off-device-driver-automatic-installation-windows-10-a.html> |
+
 ### ElevenForums Windows Registry
 
 | retrieved | resource | url |

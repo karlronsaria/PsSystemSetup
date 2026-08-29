@@ -104,5 +104,5 @@ Find-UninstallCommand `
     -WildCardPattern "*LEGO*Spike*Legacy*" |
     ForEach-Object { $_ | Invoke-Expression }
 
-& "$PsScriptRoot/../res/install/MCreator.2024.3.Windows.64bit.exe"
+& "$PsScriptRoot/../res/install/MCreator.2024.1.Windows.64bit.exe"
 

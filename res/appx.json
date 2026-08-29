@@ -4,6 +4,7 @@
             "Name": "Personal",
             "Patterns": [
                   "*copilot*"
+                , "*MSTeams*"
                 , "*startexperience*"
                 , "*webexperience*"
                 , "Microsoft.SkypeApp"
@@ -30,6 +31,7 @@
             "Name": "Thin",
             "Patterns" : [
                   "*copilot*"
+                , "*MSTeams*"
                 , "*startexperience*"
                 , "*webexperience*"
                 , "*bingweather*"
