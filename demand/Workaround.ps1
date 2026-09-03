@@ -146,7 +146,11 @@ function Uninstall-OneDrive {
     Param()
 
     taskkill /f /im OneDrive.exe
-    C:\Windows\SysWOW64\OneDriveSetup.exe /uninstall
+    
+    C:\Windows\System32\OneDriveSetup.exe /uninstall
+    
+    # # (karlr 2026-09-02)
+    # C:\Windows\SysWOW64\OneDriveSetup.exe /uninstall
 }
 
 <#
